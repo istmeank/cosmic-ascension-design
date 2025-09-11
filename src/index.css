@@ -183,8 +183,6 @@ All colors MUST be HSL.
   .nebula-glow {
     animation: nebula-glow 6s ease-in-out infinite;
   }
-    transition: var(--transition-cosmic);
-  }
   
   .cosmic-glow:hover {
     box-shadow: var(--glow-stellar), var(--glow-nebula);
