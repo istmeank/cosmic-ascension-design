@@ -132,11 +132,7 @@ All colors MUST be HSL.
   }
 }
 
-@layer components {
-  .cosmic-glow {
-    box-shadow: var(--glow-stellar);
-  }
-  
+@layer utilities {
   /* Animations pour les nébuleuses */
   @keyframes nebula-pulse {
     0%, 100% { 
@@ -177,11 +173,17 @@ All colors MUST be HSL.
   }
   
   .nebula-animated {
-    animation: nebula-pulse 8s ease-in-out infinite, nebula-drift 12s ease-in-out infinite;
+    animation: nebula-pulse 8s ease-in-out infinite, nebula-drift 12s ease-in-out infinite !important;
   }
   
   .nebula-glow {
-    animation: nebula-glow 6s ease-in-out infinite;
+    animation: nebula-glow 6s ease-in-out infinite !important;
+  }
+}
+
+@layer components {
+  .cosmic-glow {
+    box-shadow: var(--glow-stellar);
   }
   
   .cosmic-glow:hover {

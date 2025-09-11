@@ -19,23 +19,23 @@ const Hero = () => {
       {/* Nébuleuses animées */}
       <div className="absolute inset-0">
         {/* Nébuleuse 1 - Violette */}
-        <div className="absolute w-96 h-96 rounded-full bg-gradient-radial from-purple-500/20 to-transparent nebula-animated nebula-glow"
+        <div className="absolute w-96 h-96 rounded-full bg-gradient-radial from-purple-500/20 to-transparent animate-nebula-pulse animate-nebula-drift"
              style={{ left: '10%', top: '20%', animationDelay: '0s' }}></div>
         
         {/* Nébuleuse 2 - Bleue */}
-        <div className="absolute w-80 h-80 rounded-full bg-gradient-radial from-blue-500/25 to-transparent nebula-animated nebula-glow"
+        <div className="absolute w-80 h-80 rounded-full bg-gradient-radial from-blue-500/25 to-transparent animate-nebula-pulse animate-nebula-drift"
              style={{ right: '15%', top: '30%', animationDelay: '2s' }}></div>
         
         {/* Nébuleuse 3 - Verte */}
-        <div className="absolute w-72 h-72 rounded-full bg-gradient-radial from-green-500/20 to-transparent nebula-animated nebula-glow"
+        <div className="absolute w-72 h-72 rounded-full bg-gradient-radial from-green-500/20 to-transparent animate-nebula-pulse animate-nebula-drift"
              style={{ left: '60%', top: '60%', animationDelay: '4s' }}></div>
         
         {/* Nébuleuse 4 - Dorée */}
-        <div className="absolute w-64 h-64 rounded-full bg-gradient-radial from-yellow-500/15 to-transparent nebula-animated nebula-glow"
+        <div className="absolute w-64 h-64 rounded-full bg-gradient-radial from-yellow-500/15 to-transparent animate-nebula-pulse animate-nebula-drift"
              style={{ left: '20%', top: '70%', animationDelay: '1s' }}></div>
         
         {/* Nébuleuse 5 - Rose */}
-        <div className="absolute w-88 h-88 rounded-full bg-gradient-radial from-pink-500/18 to-transparent nebula-animated nebula-glow"
+        <div className="absolute w-88 h-88 rounded-full bg-gradient-radial from-pink-500/18 to-transparent animate-nebula-pulse animate-nebula-drift"
              style={{ right: '25%', bottom: '20%', animationDelay: '3s' }}></div>
         
         {/* Particules flottantes */}
