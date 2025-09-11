@@ -8,35 +8,61 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cosmic Background System */
+    --background: 220 15% 5%;
+    --foreground: 60 100% 85%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Nebula Card System */
+    --card: 260 15% 8%;
+    --card-foreground: 60 100% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 260 15% 8%;
+    --popover-foreground: 60 100% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Cosmic Gold Primary */
+    --primary: 45 100% 65%;
+    --primary-foreground: 220 15% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Nebula Purple Secondary */
+    --secondary: 280 60% 25%;
+    --secondary-foreground: 60 100% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Cosmic Green Muted */
+    --muted: 150 40% 15%;
+    --muted-foreground: 150 20% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Stellar Accent */
+    --accent: 320 80% 45%;
+    --accent-foreground: 60 100% 95%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 260 25% 20%;
+    --input: 260 15% 12%;
+    --ring: 45 100% 65%;
 
-    --radius: 0.5rem;
+    /* Cosmic Design Tokens */
+    --cosmic-nebula-green: 150 70% 50%;
+    --cosmic-nebula-purple: 280 60% 40%;
+    --cosmic-stellar-gold: 45 100% 65%;
+    --cosmic-deep-space: 220 15% 3%;
+    --cosmic-star-white: 60 100% 95%;
+
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-nebula-purple)) 0%, hsl(var(--cosmic-nebula-green)) 50%, hsl(var(--cosmic-stellar-gold)) 100%);
+    --gradient-stellar: radial-gradient(circle at center, hsl(var(--cosmic-stellar-gold) / 0.3) 0%, transparent 70%);
+    --gradient-nebula: linear-gradient(45deg, hsl(var(--cosmic-nebula-purple) / 0.4), hsl(var(--cosmic-nebula-green) / 0.4));
+
+    /* Shadows & Glows */
+    --shadow-cosmic: 0 20px 40px hsl(var(--cosmic-nebula-purple) / 0.3);
+    --glow-stellar: 0 0 40px hsl(var(--cosmic-stellar-gold) / 0.6);
+    --glow-nebula: 0 0 60px hsl(var(--cosmic-nebula-green) / 0.4);
+
+    /* Animations */
+    --transition-cosmic: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +127,71 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: radial-gradient(ellipse at center, hsl(var(--cosmic-deep-space)) 0%, hsl(var(--background)) 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .cosmic-glow {
+    box-shadow: var(--glow-stellar);
+    transition: var(--transition-cosmic);
+  }
+  
+  .cosmic-glow:hover {
+    box-shadow: var(--glow-stellar), var(--glow-nebula);
+    transform: translateY(-2px);
+  }
+  
+  .nebula-bg {
+    background: var(--gradient-nebula);
+  }
+  
+  .stellar-bg {
+    background: var(--gradient-stellar);
+  }
+  
+  .cosmic-text {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite alternate;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+  
+  .bg-gradient-conic {
+    background: conic-gradient(var(--tw-gradient-stops));
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulseGlow {
+  0% { 
+    box-shadow: 0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3);
+  }
+  100% { 
+    box-shadow: 0 0 40px hsl(var(--cosmic-stellar-gold) / 0.8), 
+                0 0 60px hsl(var(--cosmic-nebula-green) / 0.4);
   }
 }

@@ -15,11 +15,17 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Cosmic Variants
+        stellar: "bg-cosmic-stellar-gold text-cosmic-deep-space hover:bg-cosmic-stellar-gold/90 cosmic-glow font-semibold",
+        nebula: "bg-gradient-to-r from-cosmic-nebula-purple to-cosmic-nebula-green text-cosmic-star-white hover:scale-105 cosmic-glow font-semibold transition-all duration-300",
+        cosmic: "bg-transparent border-2 border-cosmic-stellar-gold text-cosmic-stellar-gold hover:bg-cosmic-stellar-gold hover:text-cosmic-deep-space cosmic-glow transition-all duration-500",
+        royal: "bg-gradient-to-r from-cosmic-nebula-purple via-cosmic-stellar-gold to-cosmic-nebula-green p-[2px] bg-clip-border text-cosmic-star-white hover:shadow-2xl animate-pulse-glow",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-lg px-12 text-lg",
         icon: "h-10 w-10",
       },
     },
