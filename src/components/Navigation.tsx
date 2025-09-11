@@ -6,8 +6,14 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cosmic-nebula-purple to-cosmic-stellar-gold"></div>
-          <span className="font-bold text-cosmic-stellar-gold">LEVEL UP</span>
+          <img 
+            src="/logo-level-up.svg" 
+            alt="LEVEL UP for Ladies & Gentlemen" 
+            className="w-8 h-8 object-contain hover:scale-110 transition-transform duration-300 filter hover:drop-shadow-[0_0_8px_hsl(var(--cosmic-stellar-gold)/0.6)]"
+          />
+          <span className="font-bold text-cosmic-stellar-gold hover:text-cosmic-nebula-green transition-colors duration-300">
+            LEVEL UP
+          </span>
         </div>
 
         {/* Navigation links - cachés sur mobile */}

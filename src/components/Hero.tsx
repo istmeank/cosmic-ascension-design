@@ -35,6 +35,11 @@ const Hero = () => {
         {/* Logo intégré dans la lumière stellaire */}
         <div className="mb-8 animate-float">
           <div className="relative inline-block">
+            <img 
+              src="/logo-level-up.svg" 
+              alt="LEVEL UP for Ladies & Gentlemen" 
+              className="w-24 h-24 md:w-32 md:h-32 mx-auto mb-6 filter drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold)/0.8)]"
+            />
             <h1 className="text-6xl md:text-8xl font-bold cosmic-text mb-4">
               LEVEL UP
             </h1>
