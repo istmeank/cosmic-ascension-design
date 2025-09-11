@@ -1,48 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none">
-  <defs>
-    <radialGradient id="cosmicGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD700" stop-opacity="1"/>
-      <stop offset="30%" stop-color="#9333EA" stop-opacity="0.8"/>
-      <stop offset="70%" stop-color="#10B981" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.3"/>
-    </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge> 
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
+<svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="120" fill="black"/>
   
-  <!-- Fond nébuleuse -->
-  <circle cx="50" cy="50" r="45" fill="url(#cosmicGlow)" opacity="0.7"/>
+  <!-- LEVEL UP Text -->
+  <text x="100" y="25" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">LEVEL UP</text>
   
-  <!-- Cercle central lumineux -->
-  <circle cx="50" cy="50" r="35" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.8" filter="url(#glow)"/>
+  <!-- Yellow Bar Pattern -->
+  <!-- Left side bars -->
+  <rect x="20" y="35" width="8" height="20" fill="#FFD700"/>
+  <rect x="30" y="35" width="8" height="35" fill="#FFD700"/>
+  <rect x="40" y="35" width="8" height="50" fill="#FFD700"/>
   
-  <!-- Particules stellaires -->
-  <circle cx="30" cy="25" r="1.5" fill="#10B981" opacity="0.8">
-    <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="75" cy="35" r="1" fill="#FFD700" opacity="0.9">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="25" cy="70" r="1.2" fill="#9333EA" opacity="0.7">
-    <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="80" cy="75" r="0.8" fill="#10B981" opacity="0.8">
-    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
-  </circle>
+  <!-- Center U shape -->
+  <rect x="55" y="35" width="15" height="65" fill="#FFD700"/>
+  <rect x="75" y="35" width="15" height="65" fill="#FFD700"/>
+  <rect x="55" y="85" width="35" height="15" fill="#FFD700"/>
   
-  <!-- Symbole central - Forme géométrique représentant l'élévation -->
-  <g transform="translate(50,50)" filter="url(#glow)">
-    <!-- Triangle pointant vers le haut pour l'élévation -->
-    <path d="M0,-15 L12,10 L-12,10 Z" fill="#FFD700" opacity="0.9"/>
-    <!-- Ligne horizontale pour l'équilibre -->
-    <line x1="-8" y1="5" x2="8" y2="5" stroke="#10B981" stroke-width="2" opacity="0.8"/>
-    <!-- Point central lumineux -->
-    <circle cx="0" cy="0" r="2" fill="#FFFFFF" opacity="0.9"/>
-  </g>
+  <!-- Right side bars -->
+  <rect x="105" y="35" width="8" height="50" fill="#FFD700"/>
+  <rect x="115" y="35" width="8" height="35" fill="#FFD700"/>
+  <rect x="125" y="35" width="8" height="20" fill="#FFD700"/>
+  
+  <!-- Plus sign -->
+  <text x="140" y="50" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">+</text>
+  
+  <!-- For Ladies Gentlemen text -->
+  <text x="90" y="105" fill="#FF69B4" font-family="serif" font-size="10" font-style="italic">For</text>
+  <text x="105" y="105" fill="#FF69B4" font-family="serif" font-size="10" font-style="italic">Ladies</text>
+  <text x="95" y="115" fill="#00BFFF" font-family="serif" font-size="10" font-style="italic">Gentlemen</text>
+  
+  <!-- White circle -->
+  <circle cx="75" cy="100" r="8" fill="white"/>
 </svg>
