@@ -7,7 +7,7 @@ const Services = () => {
       title: "Coaching Quantique",
       description: "Sessions personnalisées d'élévation énergétique et de reprogrammation cellulaire pour débloquer ton plein potentiel.",
       features: ["Analyse énergétique", "Nettoyage des blocages", "Activation des codes ADN", "Guidance spirituelle"],
-      price: "À partir de 197€"
+      price: "2500 DA"
     },
     {
       icon: "🌟",
