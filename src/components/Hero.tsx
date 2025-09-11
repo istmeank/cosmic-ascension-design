@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroBackground from "@/assets/cosmic-nebula-hero.jpg";
+import heroBackground from "@/assets/level-up-background.svg";
 
 const Hero = () => {
   return (
@@ -10,6 +10,7 @@ const Hero = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Overlay pour améliorer la lisibilité */}
