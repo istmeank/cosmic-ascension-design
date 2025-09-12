@@ -178,6 +178,10 @@ All colors MUST be HSL.
     animation: textGlow 2s ease-in-out infinite;
   }
   
+  .animate-galactic-doors {
+    animation: galacticDoors 2s ease-in-out;
+  }
+  
   .bg-gradient-radial {
     background: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
@@ -208,5 +212,19 @@ All colors MUST be HSL.
   }
   50% { 
     text-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor, 0 0 50px currentColor;
+  }
+}
+
+@keyframes galacticDoors {
+  0% {
+    clip-path: inset(0 50% 0 0);
+  }
+  50% {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1.2);
+  }
+  100% {
+    clip-path: inset(0 0 0 50%);
+    transform: scale(1);
   }
 }
