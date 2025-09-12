@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/level-up-background.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogoClick = () => {
     setIsAnimating(true);
@@ -76,12 +78,21 @@ const Hero = () => {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <Button variant="royal" size="xl" className="transform hover:scale-110 transition-all duration-300">
-            Commencer ma Transformation
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <Button 
+            variant="royal" 
+            size="xl" 
+            className="transform hover:scale-110 transition-all duration-300"
+            onClick={() => navigate("/auth?tab=signup")}
+          >
+            S'inscrire
           </Button>
-          <Button variant="cosmic" size="xl">
-            Découvrir l'Univers LEVEL UP
+          <Button 
+            variant="cosmic" 
+            size="lg"
+            onClick={() => navigate("/auth?tab=signin")}
+          >
+            Se connecter
           </Button>
         </div>
 
