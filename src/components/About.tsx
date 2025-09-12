@@ -28,11 +28,11 @@ const About = () => {
                 <h3 className="text-2xl font-semibold text-cosmic-nebula-green mb-4">
                   ✨ Vision Galactique
                 </h3>
-                <p className="text-card-foreground leading-relaxed"><span className="font-tangerine font-bold text-4xl text-cosmic-purple-pink">Femmes</span>, vous portez en vous le pouvoir sacré de la sélection, de la création et de l'éducation. Vous êtes le jardin secret que tout homme véritable aspire à protéger.
+                <p className="text-card-foreground leading-relaxed"><span className="font-tangerine font-bold text-4xl text-cosmic-purple-pink animate-text-glow">Femmes</span>, vous portez en vous le pouvoir sacré de la sélection, de la création et de l'éducation. Vous êtes le jardin secret que tout homme véritable aspire à protéger.
 
 <br /><br />
 
-<span className="font-tangerine font-bold text-4xl text-cosmic-royal-blue">Hommes</span>, votre mission est de guider, protéger et stabiliser. Vous êtes l'étoile dans la nuit que toute femme authentique souhaite avoir à ses côtés.
+<span className="font-tangerine font-bold text-4xl text-cosmic-royal-blue animate-text-glow">Hommes</span>, votre mission est de guider, protéger et stabiliser. Vous êtes l'étoile dans la nuit que toute femme authentique souhaite avoir à ses côtés.
 
 Ensemble, notre objectif commun est d'offrir à Allah une dévotion sincère et de Le remercier pour Ses innombrables bienfaits.</p>
               </div>
