@@ -68,6 +68,7 @@ export default {
           "deep-space": "hsl(var(--cosmic-deep-space))",
           "star-white": "hsl(var(--cosmic-star-white))",
           "purple-pink": "hsl(var(--cosmic-purple-pink))",
+          "royal-blue": "hsl(var(--cosmic-royal-blue))",
         },
       },
       borderRadius: {
