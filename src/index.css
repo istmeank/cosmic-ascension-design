@@ -48,6 +48,7 @@ All colors MUST be HSL.
     --cosmic-stellar-gold: 45 100% 65%;
     --cosmic-deep-space: 220 15% 3%;
     --cosmic-star-white: 60 100% 95%;
+    --cosmic-purple-pink: 320 70% 65%;
 
     /* Gradients */
     --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-nebula-purple)) 0%, hsl(var(--cosmic-nebula-green)) 50%, hsl(var(--cosmic-stellar-gold)) 100%);

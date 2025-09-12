@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'tangerine': ['Tangerine', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -64,6 +67,7 @@ export default {
           "stellar-gold": "hsl(var(--cosmic-stellar-gold))",
           "deep-space": "hsl(var(--cosmic-deep-space))",
           "star-white": "hsl(var(--cosmic-star-white))",
+          "purple-pink": "hsl(var(--cosmic-purple-pink))",
         },
       },
       borderRadius: {
