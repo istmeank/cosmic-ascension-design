@@ -20,8 +20,19 @@ const Hero = () => {
       <div className="absolute inset-0 bg-cosmic-deep-space/40" />
       
       {/* Particules flottantes */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => {})}
+      <div className="absolute inset-0 pointer-events-none">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <span
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-cosmic-stellar-gold/60 animate-pulse"
+            style={{
+              left: `${(i * 13) % 100}%`,
+              top: `${(i * 29) % 100}%`,
+              animationDelay: `${i * 0.1}s`,
+            }}
+            aria-hidden="true"
+          />
+        ))}
       </div>
 
       {/* Contenu principal */}
