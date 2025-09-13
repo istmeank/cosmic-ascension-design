@@ -6,10 +6,26 @@ const About = () => {
           <h2 className="text-4xl md:text-6xl font-bold cosmic-text mb-6">
             L'Éveil Cosmique
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Dans les profondeurs de l'univers, chaque étoile possède sa propre lumière. 
-            LEVEL UP révèle la constellation unique qui sommeille en toi.
+        {/* Vision du fondateur */}
+        <div className="mb-8 text-center">
+          <p className="text-lg text-cosmic-stellar-gold/90 mb-4 font-semibold">
+            Fondé par Abdenacer Maredj (ANK)
           </p>
+          <p className="text-sm text-cosmic-star-white/60 mb-6">
+            Psychothérapeute, Closer Professionnel & Expert en Business et Branding
+          </p>
+        </div>
+
+        {/* Vision principale */}
+        <p className="text-xl md:text-2xl text-cosmic-star-white/80 mb-8 leading-relaxed">
+          Un jardin secret pour <span className="animate-text-glow text-pink-400">femmes</span> et <span className="animate-text-glow text-blue-400">hommes</span> de haute valeur
+        </p>
+        
+        <p className="text-lg text-cosmic-star-white/70 mb-12 leading-relaxed max-w-3xl mx-auto">
+          LEVEL UP est avant tout une terre fertile constituée d'une multitude d'argiles précieuses. 
+          Vous êtes cette terre fertile qu'Allah a créée, la base de toute société avec le pouvoir de sélectionner, 
+          porter la vie et l'éduquer aux côtés d'âmes véritables.
+        </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">

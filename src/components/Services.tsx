@@ -1,30 +1,6 @@
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
-  const services = [
-    {
-      icon: "🧘‍♀️",
-      title: "Coaching Quantique",
-      description: "Sessions personnalisées d'élévation énergétique et de reprogrammation cellulaire pour débloquer ton plein potentiel.",
-      features: ["Analyse énergétique", "Nettoyage des blocages", "Activation des codes ADN", "Guidance spirituelle"],
-      price: "2500 DA"
-    },
-    {
-      icon: "🌟",
-      title: "Cercle de Lumière",
-      description: "Communauté exclusive d'âmes éveillées partageant outils, méditations et cérémonies de transformation.",
-      features: ["Méditations collectives", "Rituels de pleine lune", "Accès bibliothèque secrète", "Support 24/7"],
-      price: "77€/mois"
-    },
-    {
-      icon: "⚡",
-      title: "Activation Royale",
-      description: "Programme intensif de 90 jours pour révéler ta magnificence et créer l'abondance dans tous les domaines.",
-      features: ["Coaching 1:1 hebdomadaire", "Outils de manifestation", "Rituels personnalisés", "Certification"],
-      price: "2997€"
-    }
-  ];
-
   return (
     <section className="py-20 px-6 relative">
       {/* Fond avec particules */}
@@ -44,59 +20,110 @@ const Services = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold cosmic-text mb-6">
-            Portails de Transformation
+          <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
+            Nos Portails d'Élévation
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Choisis ton chemin vers l'illumination. Chaque portail ouvre une dimension nouvelle 
-            de ton être multidimensionnel.
+          <p className="text-xl text-cosmic-star-white/80 max-w-3xl mx-auto leading-relaxed mb-6">
+            Chaque L représente un pilier, chaque pilier une nuance, 
+            chaque pilier une porte qui s'ouvre sur un univers à explorer
+          </p>
+          <p className="text-lg text-cosmic-stellar-gold/90 font-semibold">
+            Espace exclusif • Places limitées • 2500 DA/mois pour les 15 premières
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="group relative">
-              {/* Effet de glow au hover */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-cosmic-nebula-purple via-cosmic-stellar-gold to-cosmic-nebula-green rounded-2xl blur opacity-0 group-hover:opacity-75 transition duration-500"></div>
-              
-              <div className="relative bg-card/80 backdrop-blur-sm p-8 rounded-2xl border border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/50 transition-all duration-300 h-full flex flex-col">
-                <div className="text-6xl mb-6 text-center animate-float">
-                  {service.icon}
-                </div>
-                
-                <h3 className="text-2xl font-bold text-cosmic-stellar-gold mb-4 text-center">
-                  {service.title}
-                </h3>
-                
-                <p className="text-card-foreground mb-6 leading-relaxed flex-grow">
-                  {service.description}
-                </p>
-                
-                <div className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <span className="w-2 h-2 bg-cosmic-nebula-green rounded-full mr-3 flex-shrink-0"></span>
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="text-center mt-auto">
-                  <div className="text-2xl font-bold cosmic-text mb-4">
-                    {service.price}
-                  </div>
-                  <Button variant="stellar" className="w-full">
-                    Commencer l'Aventure
-                  </Button>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Connexion Session */}
+          <div className="group cosmic-glow p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 cosmic-text rounded-full flex items-center justify-center text-2xl mb-4 mx-auto border-2 border-cosmic-stellar-gold/30">
+              🔗
             </div>
-          ))}
+            <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
+              Connexion Session
+            </h3>
+            <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
+              Première séance obligatoire du mois pour développer des liens authentiques et apprendre à bien s'entourer
+            </p>
+          </div>
+
+          {/* Lecture & Analyse */}
+          <div className="group cosmic-glow p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 cosmic-text rounded-full flex items-center justify-center text-2xl mb-4 mx-auto border-2 border-cosmic-stellar-gold/30">
+              📚
+            </div>
+            <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
+              Lecture & Analyse
+            </h3>
+            <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
+              Deuxième séance : lecture et décorticage d'un chapitre de livre choisi ensemble pour enrichir nos perspectives
+            </p>
+          </div>
+
+          {/* Système de Valeurs */}
+          <div className="group cosmic-glow p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 cosmic-text rounded-full flex items-center justify-center text-2xl mb-4 mx-auto border-2 border-cosmic-stellar-gold/30">
+              💎
+            </div>
+            <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
+              Système de Valeurs
+            </h3>
+            <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
+              Troisième séance : exploration et compréhension profonde des valeurs et de leurs implications dans nos vies
+            </p>
+          </div>
+
+          {/* Conférences Thématiques */}
+          <div className="group cosmic-glow p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+            <div className="w-16 h-16 cosmic-text rounded-full flex items-center justify-center text-2xl mb-4 mx-auto border-2 border-cosmic-stellar-gold/30">
+              🎤
+            </div>
+            <h3 className="text-xl font-bold text-cosmic-stellar-gold mb-3 text-center">
+              Conférences Thématiques
+            </h3>
+            <p className="text-cosmic-star-white/70 text-center leading-relaxed text-sm">
+              Quatrième séance : conférence sur un thème choisi ensemble, d'une valeur de 4000 DA chacune
+            </p>
+          </div>
         </div>
 
-        <div className="text-center mt-16">
+        {/* Avantages exclusifs */}
+        <div className="mt-16 cosmic-glow p-8 rounded-2xl">
+          <h3 className="text-2xl font-bold text-cosmic-stellar-gold mb-6 text-center">
+            Avantages Exclusifs
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-3xl mb-2">📱</div>
+              <h4 className="font-semibold text-cosmic-star-white mb-2">WhatsApp VIP</h4>
+              <p className="text-sm text-cosmic-star-white/70">Accès au groupe exclusif LEVEL + et questions directes à Nacer</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">🎯</div>
+              <h4 className="font-semibold text-cosmic-star-white mb-2">Meetings Google Meet</h4>
+              <p className="text-sm text-cosmic-star-white/70">Chaque vendredi à 19h/20h + rediffusions de l'année</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl mb-2">🏆</div>
+              <h4 className="font-semibold text-cosmic-star-white mb-2">Système de Points</h4>
+              <p className="text-sm text-cosmic-star-white/70">Gagnez des points convertibles en récompenses exclusives</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Explication du logo */}
+        <div className="mt-16 text-center">
+          <h3 className="text-2xl font-bold text-cosmic-stellar-gold mb-4">Signification du Logo</h3>
+          <div className="max-w-4xl mx-auto space-y-4 text-cosmic-star-white/80">
+            <p>LVL pour LEVEL et + pour UP = LEVEL UP</p>
+            <p>La couronne représente votre valeur de base qui s'ouvre sur un système de valeurs complet et cohérent</p>
+            <p>Chaque L représente un pilier, chaque pilier une nuance, chaque pilier une porte vers un espace vital incroyable</p>
+            <p>Le fond galactique représente l'univers à explorer après s'être réconciliée avec son ego</p>
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
           <Button variant="royal" size="xl">
-            Consultation Gratuite de 30 min
+            Rejoindre nos Padawan's
           </Button>
         </div>
       </div>
