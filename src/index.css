@@ -229,30 +229,30 @@ All colors MUST be HSL.
 
 @keyframes galacticDoors {
   0% {
-    clipPath: 'polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%)',
-    transform: 'scale(1)',
-    filter: 'brightness(1) drop-shadow(0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3))',
-  },
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3));
+  }
   25% {
-    clipPath: 'polygon(0% 0%, 25% 0%, 25% 100%, 0% 100%)',
-    transform: 'scale(1.1)',
-    filter: 'brightness(1.2) drop-shadow(0 0 40px hsl(var(--cosmic-stellar-gold) / 0.6))',
-  },
+    clip-path: polygon(0% 0%, 25% 0%, 25% 100%, 0% 100%);
+    transform: scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 0 40px hsl(var(--cosmic-stellar-gold) / 0.6));
+  }
   50% {
-    clipPath: 'polygon(25% 0%, 75% 0%, 75% 100%, 25% 100%)',
-    transform: 'scale(1.2)',
-    filter: 'brightness(1.5) drop-shadow(0 0 60px hsl(var(--cosmic-stellar-gold) / 0.9))',
-  },
+    clip-path: polygon(25% 0%, 75% 0%, 75% 100%, 25% 100%);
+    transform: scale(1.2);
+    filter: brightness(1.5) drop-shadow(0 0 60px hsl(var(--cosmic-stellar-gold) / 0.9));
+  }
   75% {
-    clipPath: 'polygon(75% 0%, 100% 0%, 100% 100%, 75% 100%)',
-    transform: 'scale(1.1)',
-    filter: 'brightness(1.2) drop-shadow(0 0 40px hsl(var(--cosmic-stellar-gold) / 0.6))',
-  },
+    clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 75% 100%);
+    transform: scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 0 40px hsl(var(--cosmic-stellar-gold) / 0.6));
+  }
   100% {
-    clipPath: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)',
-    transform: 'scale(1)',
-    filter: 'brightness(1) drop-shadow(0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3))',
-  },
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3));
+  }
 }
 
 @keyframes cosmicShine {
