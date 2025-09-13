@@ -21,11 +21,7 @@ const Hero = () => {
       
       {/* Particules flottantes */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => <div key={i} className="absolute w-1 h-1 bg-cosmic-stellar-gold rounded-full animate-pulse-glow" style={{
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 3}s`
-      }} />)}
+        {[...Array(20)].map((_, i) => {})}
       </div>
 
       {/* Contenu principal */}
@@ -33,59 +29,38 @@ const Hero = () => {
         {/* Logo principal centré avec animations cosmiques */}
         <div className="mb-12 animate-float">
           <div className="relative inline-block">
-            <button 
-              onClick={handleLogoClick} 
-              className={`w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto mb-6 cursor-pointer transition-all duration-500 hover:scale-105 ${isAnimating ? 'animate-galactic-doors' : ''} ${isAnimating ? 'animate-cosmic-shine' : ''}`}
-            >
-              <img 
-                src="/new-level-up-logo.png" 
-                alt="LEVEL UP for Ladies & Gentlemen" 
-                className="w-full h-full filter drop-shadow-[0_0_60px_hsl(var(--cosmic-stellar-gold)/0.8)]" 
-              />
+            <button onClick={handleLogoClick} className={`w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto mb-6 cursor-pointer transition-all duration-500 hover:scale-105 ${isAnimating ? 'animate-galactic-doors' : ''} ${isAnimating ? 'animate-cosmic-shine' : ''}`}>
+              <img src="/new-level-up-logo.png" alt="LEVEL UP for Ladies & Gentlemen" className="w-full h-full filter drop-shadow-[0_0_60px_hsl(var(--cosmic-stellar-gold)/0.8)]" />
             </button>
             
             {/* Aura cosmique permanente */}
             <div className="absolute -inset-16 bg-gradient-radial from-cosmic-stellar-gold/20 via-cosmic-nebula-purple/10 to-transparent rounded-full blur-3xl animate-pulse-slow" />
             
             {/* Effets au clic - Portes galactiques qui s'ouvrent */}
-            {isAnimating && (
-              <>
+            {isAnimating && <>
                 <div className="absolute inset-0 bg-gradient-to-r from-cosmic-nebula-purple via-cosmic-stellar-gold to-cosmic-nebula-green opacity-70 rounded-full animate-spin-slow" />
                 <div className="absolute inset-0 bg-gradient-conic from-cosmic-nebula-purple via-cosmic-stellar-gold to-cosmic-nebula-green opacity-50 rounded-full blur-2xl animate-pulse" />
                 
                 {/* Rayons d'énergie */}
                 <div className="absolute -inset-8">
-                  {[...Array(8)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-1 h-16 bg-cosmic-stellar-gold animate-pulse-glow"
-                      style={{
-                        left: '50%',
-                        top: '50%',
-                        transform: `rotate(${i * 45}deg) translateY(-120px)`,
-                        transformOrigin: '0 120px',
-                        animationDelay: `${i * 0.1}s`
-                      }}
-                    />
-                  ))}
+                  {[...Array(8)].map((_, i) => <div key={i} className="absolute w-1 h-16 bg-cosmic-stellar-gold animate-pulse-glow" style={{
+                left: '50%',
+                top: '50%',
+                transform: `rotate(${i * 45}deg) translateY(-120px)`,
+                transformOrigin: '0 120px',
+                animationDelay: `${i * 0.1}s`
+              }} />)}
                 </div>
                 
                 {/* Particules d'énergie qui explosent */}
                 <div className="absolute inset-0">
-                  {[...Array(12)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="absolute w-2 h-2 bg-cosmic-stellar-gold rounded-full animate-energy-burst"
-                      style={{
-                        left: `${50 + Math.cos(i * 30 * Math.PI / 180) * 40}%`,
-                        top: `${50 + Math.sin(i * 30 * Math.PI / 180) * 40}%`,
-                        animationDelay: `${i * 0.05}s`
-                      }}
-                    />
-                  ))}
+                  {[...Array(12)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-cosmic-stellar-gold rounded-full animate-energy-burst" style={{
+                left: `${50 + Math.cos(i * 30 * Math.PI / 180) * 40}%`,
+                top: `${50 + Math.sin(i * 30 * Math.PI / 180) * 40}%`,
+                animationDelay: `${i * 0.05}s`
+              }} />)}
                 </div>
-              </>
-            )}
+              </>}
           </div>
         </div>
 
