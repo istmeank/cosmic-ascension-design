@@ -83,8 +83,10 @@ const DimensionalLogoGateway = ({ onNavigate }: DimensionalLogoGatewayProps) => 
       {/* Logo Central - Reste intact */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="flex items-center justify-center bg-gradient-to-r from-cosmic-stellar-gold via-cosmic-nebula-green to-cosmic-nebula-purple p-4 rounded-lg shadow-2xl border border-cosmic-stellar-gold/30">
-          <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-cosmic-star-white tracking-wider">
-            L<span className="text-cosmic-stellar-gold mx-1">E</span>L
+          <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-cosmic-stellar-gold tracking-wider flex items-center">
+            <span className="font-sans">L</span>
+            <span className="font-dancing mx-1">V</span>
+            <span className="font-sans">L</span>
           </span>
         </div>
       </div>
