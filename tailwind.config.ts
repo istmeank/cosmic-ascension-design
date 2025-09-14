@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'tangerine': ['Tangerine', 'cursive'],
+        'script': ['Dancing Script', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
