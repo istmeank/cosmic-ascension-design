@@ -1,17 +1,15 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/level-up-background.svg";
 import { useNavigate } from "react-router-dom";
-
 const Hero = () => {
   const navigate = useNavigate();
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{
-      backgroundImage: `url(${heroBackground})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
-      backgroundRepeat: 'no-repeat'
-    }}>
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{
+    backgroundImage: `url(${heroBackground})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    backgroundRepeat: 'no-repeat'
+  }}>
       {/* Overlay pour améliorer la lisibilité */}
       <div className="absolute inset-0 bg-cosmic-deep-space/40" />
       
@@ -27,9 +25,7 @@ const Hero = () => {
         </div>
 
         {/* Slogan */}
-        <p className="text-xl md:text-2xl text-cosmic-star-white/80 mb-12 leading-relaxed">
-          Éveille ta puissance intérieure et transforme ton destin dans l'énergie cosmique de l'élévation
-        </p>
+        
 
         {/* CTAs */}
         <div className="flex flex-col gap-4 justify-center items-center">
@@ -41,7 +37,6 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default Hero;
