@@ -9,7 +9,7 @@ const Navigation = () => {
           <img 
             src="/level-up-for-ladies-gentlemen-logo.png" 
             alt="LEVEL UP for Ladies & Gentlemen" 
-            className="h-12 w-auto object-contain hover:scale-110 transition-transform duration-300 filter hover:drop-shadow-[0_0_8px_hsl(var(--cosmic-stellar-gold)/0.6)]"
+            className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 filter hover:drop-shadow-[0_0_8px_hsl(var(--cosmic-stellar-gold)/0.6)]"
           />
         </div>
 
