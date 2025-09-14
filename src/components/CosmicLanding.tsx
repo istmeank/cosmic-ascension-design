@@ -1,6 +1,9 @@
 import Navigation from "./Navigation";
 import Hero from "./Hero";
 import About from "./About";
+import WhoAmI from "./WhoAmI";
+import Formations from "./Formations";
+import ServicesProducts from "./ServicesProducts";
 import Services from "./Services";
 import Contact from "./Contact";
 
@@ -12,6 +15,15 @@ const CosmicLanding = () => {
         <Hero />
         <div id="about">
           <About />
+        </div>
+        <div id="who-am-i">
+          <WhoAmI />
+        </div>
+        <div id="formations">
+          <Formations />
+        </div>
+        <div id="services-products">
+          <ServicesProducts />
         </div>
         <div id="services">
           <Services />

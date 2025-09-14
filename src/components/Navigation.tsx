@@ -19,8 +19,14 @@ const Navigation = () => {
           <a href="#about" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Mission
           </a>
-          <a href="#services" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
-            Portails
+          <a href="#who-am-i" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+            Qui suis-je
+          </a>
+          <a href="#formations" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+            Formations
+          </a>
+          <a href="#services-products" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+            Services & Produits
           </a>
           <a href="#contact" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Contact
