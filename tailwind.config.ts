@@ -15,7 +15,6 @@ export default {
     extend: {
       fontFamily: {
         'tangerine': ['Tangerine', 'cursive'],
-        'dancing': ['Dancing Script', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -113,7 +112,6 @@ export default {
         float: "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite alternate",
         "spin-slow": "spin 8s linear infinite",
-        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
   },
