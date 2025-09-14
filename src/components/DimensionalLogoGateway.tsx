@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface DimensionalLogoGatewayProps {
@@ -14,24 +13,24 @@ const DimensionalLogoGateway = ({ onNavigate }: DimensionalLogoGatewayProps) => 
   const dimensions = [
     {
       id: "about",
-      title: "L'Éveil Cosmique",
-      subtitle: "Découvrez votre essence",
-      icon: "✨",
-      color: "cosmic-nebula-green"
+      title: "Qui suis-je ?",
+      subtitle: "Découvrez mon parcours",
+      icon: "👤",
+      position: "top"
     },
     {
       id: "services", 
-      title: "Portails d'Élévation",
-      subtitle: "Nos services divins",
-      icon: "🌌",
-      color: "cosmic-stellar-gold"
+      title: "Mes Services",
+      subtitle: "Accompagnement personnalisé",
+      icon: "🌟",
+      position: "left"
     },
     {
       id: "contact",
-      title: "Connexion Universelle", 
-      subtitle: "Rejoignez-nous",
-      icon: "🔮",
-      color: "cosmic-nebula-purple"
+      title: "Me Contacter", 
+      subtitle: "Prenons rendez-vous",
+      icon: "💫",
+      position: "right"
     }
   ];
 
@@ -81,108 +80,91 @@ const DimensionalLogoGateway = ({ onNavigate }: DimensionalLogoGatewayProps) => 
         </div>
       )}
 
-      {/* Logo Container */}
-      <div className="relative w-full h-full flex items-center justify-center">
-        {/* Logo doors/segments */}
-        <div className="relative flex items-center justify-center">
-          
-          {/* Left Door - L */}
-          <div 
-            className={`relative transition-all duration-700 ease-out transform-gpu ${
-              isOpen ? 'translate-x-[-80px] rotate-y-[25deg]' : 'translate-x-0 rotate-y-0'
-            }`}
-            style={{ transformStyle: 'preserve-3d' }}
-            onMouseEnter={() => setHoveredDimension('about')}
-          >
-            <div className="w-16 h-24 md:w-20 md:h-28 lg:w-24 lg:h-32 bg-gradient-to-b from-cosmic-stellar-gold to-cosmic-nebula-green rounded-l-lg flex items-center justify-center text-3xl md:text-4xl lg:text-5xl font-bold text-cosmic-deep-space shadow-lg">
-              L
-            </div>
-            
-            {/* Dimension Portal Behind Left Door */}
-            {isOpen && hoveredDimension === 'about' && (
-              <div 
-                className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-green/40 to-cosmic-stellar-gold/20 rounded-lg backdrop-blur-sm border border-cosmic-nebula-green/30 cursor-pointer transition-all duration-300 hover:scale-105"
-                onClick={() => handleDoorClick('about')}
-              >
-                <div className="p-4 text-center text-cosmic-star-white">
-                  <div className="text-2xl mb-2">{dimensions[0].icon}</div>
-                  <div className="text-sm font-semibold">{dimensions[0].title}</div>
-                  <div className="text-xs opacity-80">{dimensions[0].subtitle}</div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Center Portal - E */}
-          <div 
-            className={`relative mx-2 md:mx-3 lg:mx-4 transition-all duration-700 ease-out ${
-              isOpen ? 'scale-125 rotate-12' : 'scale-100 rotate-0'
-            }`}
-            onMouseEnter={() => setHoveredDimension('services')}
-          >
-            <div className="w-16 h-24 md:w-20 md:h-28 lg:w-24 lg:h-32 bg-gradient-to-b from-cosmic-nebula-purple to-cosmic-stellar-gold flex items-center justify-center text-3xl md:text-4xl lg:text-5xl font-bold text-cosmic-star-white shadow-lg rounded-md">
-              E
-            </div>
-            
-            {/* Central Dimension Portal */}
-            {isOpen && hoveredDimension === 'services' && (
-              <div 
-                className="absolute -inset-4 bg-gradient-to-br from-cosmic-stellar-gold/40 to-cosmic-nebula-purple/20 rounded-lg backdrop-blur-sm border border-cosmic-stellar-gold/30 cursor-pointer transition-all duration-300 hover:scale-105"
-                onClick={() => handleDoorClick('services')}
-              >
-                <div className="p-4 text-center text-cosmic-star-white">
-                  <div className="text-2xl mb-2">{dimensions[1].icon}</div>
-                  <div className="text-sm font-semibold">{dimensions[1].title}</div>
-                  <div className="text-xs opacity-80">{dimensions[1].subtitle}</div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Right Door - L */}
-          <div 
-            className={`relative transition-all duration-700 ease-out transform-gpu ${
-              isOpen ? 'translate-x-[80px] rotate-y-[-25deg]' : 'translate-x-0 rotate-y-0'
-            }`}
-            style={{ transformStyle: 'preserve-3d' }}
-            onMouseEnter={() => setHoveredDimension('contact')}
-          >
-            <div className="w-16 h-24 md:w-20 md:h-28 lg:w-24 lg:h-32 bg-gradient-to-b from-cosmic-stellar-gold to-cosmic-nebula-purple rounded-r-lg flex items-center justify-center text-3xl md:text-4xl lg:text-5xl font-bold text-cosmic-deep-space shadow-lg">
-              L
-            </div>
-            
-            {/* Dimension Portal Behind Right Door */}
-            {isOpen && hoveredDimension === 'contact' && (
-              <div 
-                className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-purple/40 to-cosmic-stellar-gold/20 rounded-lg backdrop-blur-sm border border-cosmic-nebula-purple/30 cursor-pointer transition-all duration-300 hover:scale-105"
-                onClick={() => handleDoorClick('contact')}
-              >
-                <div className="p-4 text-center text-cosmic-star-white">
-                  <div className="text-2xl mb-2">{dimensions[2].icon}</div>
-                  <div className="text-sm font-semibold">{dimensions[2].title}</div>
-                  <div className="text-xs opacity-80">{dimensions[2].subtitle}</div>
-                </div>
-              </div>
-            )}
-          </div>
+      {/* Logo Central - Reste intact */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="flex items-center justify-center bg-gradient-to-r from-cosmic-stellar-gold via-cosmic-nebula-green to-cosmic-nebula-purple p-4 rounded-lg shadow-2xl border border-cosmic-stellar-gold/30">
+          <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-cosmic-star-white tracking-wider">
+            L<span className="text-cosmic-stellar-gold mx-1">E</span>L
+          </span>
         </div>
-
-        {/* Central Cosmic Energy */}
-        {isOpen && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-8 h-8 bg-cosmic-stellar-gold rounded-full animate-pulse-glow opacity-60" />
-          </div>
-        )}
       </div>
 
+      {/* Portail Qui suis-je - Carré en haut */}
+      <div 
+        className={`absolute top-4 left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
+          isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        }`}
+        onMouseEnter={() => setHoveredDimension('about')}
+      >
+        <div 
+          className={`w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-cosmic-nebula-green/40 to-cosmic-stellar-gold/20 rounded-lg backdrop-blur-sm border border-cosmic-nebula-green/30 cursor-pointer transition-all duration-300 flex flex-col items-center justify-center ${
+            hoveredDimension === 'about' ? 'scale-110 shadow-lg' : 'scale-100'
+          }`}
+          onClick={() => handleDoorClick('about')}
+        >
+          <div className="text-2xl mb-1">{dimensions[0].icon}</div>
+          <div className="text-xs font-semibold text-cosmic-star-white text-center">Qui suis-je ?</div>
+        </div>
+      </div>
+
+      {/* Portail Services - Porte gauche */}
+      <div 
+        className={`absolute left-4 top-1/2 transform -translate-y-1/2 transition-all duration-700 ${
+          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
+        }`}
+        onMouseEnter={() => setHoveredDimension('services')}
+      >
+        <div 
+          className={`w-20 h-32 md:w-24 md:h-36 bg-gradient-to-br from-cosmic-stellar-gold/40 to-cosmic-nebula-purple/20 rounded-lg backdrop-blur-sm border border-cosmic-stellar-gold/30 cursor-pointer transition-all duration-300 flex flex-col items-center justify-center ${
+            hoveredDimension === 'services' ? 'scale-110 shadow-lg' : 'scale-100'
+          }`}
+          onClick={() => handleDoorClick('services')}
+        >
+          <div className="text-2xl mb-2">{dimensions[1].icon}</div>
+          <div className="text-xs font-semibold text-cosmic-star-white text-center px-2">Services</div>
+        </div>
+      </div>
+
+      {/* Portail Contact - Porte droite */}
+      <div 
+        className={`absolute right-4 top-1/2 transform -translate-y-1/2 transition-all duration-700 ${
+          isOpen ? 'translate-x-0 opacity-100' : 'translate-x-[-16px] opacity-0'
+        }`}
+        onMouseEnter={() => setHoveredDimension('contact')}
+      >
+        <div 
+          className={`w-20 h-32 md:w-24 md:h-36 bg-gradient-to-br from-cosmic-nebula-purple/40 to-cosmic-stellar-gold/20 rounded-lg backdrop-blur-sm border border-cosmic-nebula-purple/30 cursor-pointer transition-all duration-300 flex flex-col items-center justify-center ${
+            hoveredDimension === 'contact' ? 'scale-110 shadow-lg' : 'scale-100'
+          }`}
+          onClick={() => handleDoorClick('contact')}
+        >
+          <div className="text-2xl mb-2">{dimensions[2].icon}</div>
+          <div className="text-xs font-semibold text-cosmic-star-white text-center px-2">Contact</div>
+        </div>
+      </div>
+
+      {/* Informations détaillées au hover */}
+      {isOpen && hoveredDimension && (
+        <div className="absolute bottom-0 left-0 right-0 text-center animate-fade-in">
+          <div className="bg-cosmic-deep-space/80 backdrop-blur-sm rounded-lg p-4 border border-cosmic-stellar-gold/20">
+            <p className="text-cosmic-stellar-gold text-lg font-semibold">
+              {dimensions.find(d => d.id === hoveredDimension)?.title}
+            </p>
+            <p className="text-cosmic-star-white/80 text-sm mt-1">
+              {dimensions.find(d => d.id === hoveredDimension)?.subtitle}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Subtitle appearing when opened */}
-      {isOpen && (
+      {isOpen && !hoveredDimension && (
         <div className="absolute -bottom-16 left-0 right-0 text-center animate-fade-in">
           <p className="text-cosmic-stellar-gold text-lg md:text-xl font-semibold">
             for Ladies & Gentlemen
           </p>
           <p className="text-cosmic-star-white/60 text-sm mt-2">
-            Survolez les portails pour découvrir les dimensions
+            Survolez les portails pour explorer les rubriques
           </p>
         </div>
       )}
