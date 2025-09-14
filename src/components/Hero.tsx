@@ -20,7 +20,7 @@ const Hero = () => {
         {/* Logo principal centré */}
         <div className="mb-8">
           <div className="relative inline-block">
-            <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto">
+            <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto">
               <img src="/new-level-up-logo.png" alt="LEVEL UP for Ladies & Gentlemen" className="w-full h-full" />
             </div>
           </div>
