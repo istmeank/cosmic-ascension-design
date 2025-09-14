@@ -3,13 +3,14 @@ import { Button } from "@/components/ui/button";
 const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-cosmic-deep-space/80 backdrop-blur-lg border-b border-cosmic-stellar-gold/20">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center">
+      <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+        {/* Logo avec effet flouté */}
+        <div className="relative flex items-center">
+          <div className="absolute inset-0 bg-cosmic-deep-space/60 backdrop-blur-md rounded-lg -z-10 transform scale-110"></div>
           <img 
             src="/level-up-for-ladies-gentlemen-logo.png" 
             alt="LEVEL UP for Ladies & Gentlemen" 
-            className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 filter hover:drop-shadow-[0_0_8px_hsl(var(--cosmic-stellar-gold)/0.6)]"
+            className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 filter hover:drop-shadow-[0_0_8px_hsl(var(--cosmic-stellar-gold)/0.6)] relative z-10"
           />
         </div>
 
