@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Contenu principal */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Logo principal centré */}
-        <div className="mb-12 mt-[30vh]">
+        <div className="mb-12 mt-[20vh]">
           <div className="relative inline-block">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               <img src="/logo-level-up-new.svg" alt="LEVEL UP" className="w-full h-full" />
