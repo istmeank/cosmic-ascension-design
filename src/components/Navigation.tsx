@@ -16,25 +16,25 @@ const Navigation = () => {
 
         {/* Navigation links - cachés sur mobile */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+          <a href="#about" className="nav-item text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Mission
           </a>
-          <a href="#who-am-i" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+          <a href="#who-am-i" className="nav-item text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Qui suis-je
           </a>
-          <a href="#formations" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+          <a href="#formations" className="nav-item text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Formations
           </a>
-          <a href="#services-products" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+          <a href="#services-products" className="nav-item text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Services & Produits
           </a>
-          <a href="#contact" className="text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
+          <a href="#contact" className="nav-item text-cosmic-star-white/80 hover:text-cosmic-stellar-gold transition-colors">
             Contact
           </a>
         </div>
 
         {/* CTA Button */}
-        <Button variant="stellar" size="sm">
+        <Button variant="stellar" size="sm" className="nav-item">
           Commencer
         </Button>
       </div>

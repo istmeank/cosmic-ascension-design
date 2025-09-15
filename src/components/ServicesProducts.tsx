@@ -81,11 +81,11 @@ const ServicesProducts = () => {
     <section className="py-20 px-6 bg-gradient-to-br from-background via-cosmic-deep-space to-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
+          <h2 className="text-reveal text-4xl md:text-5xl font-bold cosmic-text mb-6">
             Services & Produits
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-reveal text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Découvrez nos services d'accompagnement personnalisés et nos produits exclusifs pour votre développement
           </p>
 
@@ -128,7 +128,7 @@ const ServicesProducts = () => {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group flex flex-col">
+              <Card key={item.id} className="hover-card bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group flex flex-col">
                 <div className="relative overflow-hidden rounded-t-lg">
                   {item.image_url ? (
                     <img 
@@ -187,7 +187,7 @@ const ServicesProducts = () => {
 
                     <Button 
                       variant="stellar" 
-                      className="w-full gap-2"
+                      className="w-full gap-2 cosmic-button"
                       onClick={() => handleContact(item)}
                     >
                       <ShoppingCart className="w-4 h-4" />
@@ -210,7 +210,7 @@ const ServicesProducts = () => {
               <p className="text-muted-foreground mb-6">
                 Chaque parcours est unique. Contactez-moi pour créer une solution sur mesure qui correspond parfaitement à vos besoins et objectifs.
               </p>
-              <Button variant="stellar" size="lg" onClick={() => handleContact({ name: 'Service personnalisé' } as ServiceProduct)}>
+              <Button variant="stellar" size="lg" className="cosmic-button" onClick={() => handleContact({ name: 'Service personnalisé' } as ServiceProduct)}>
                 Discutons de votre projet
               </Button>
             </CardContent>

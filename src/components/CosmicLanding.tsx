@@ -6,29 +6,31 @@ import Formations from "./Formations";
 import ServicesProducts from "./ServicesProducts";
 import Services from "./Services";
 import Contact from "./Contact";
+import SmoothScroll from "./animations/SmoothScroll";
 
 const CosmicLanding = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SmoothScroll />
       <Navigation />
       <main>
         <Hero />
-        <div id="about">
+        <div id="about" className="animate-section">
           <About />
         </div>
-        <div id="who-am-i">
+        <div id="who-am-i" className="animate-section">
           <WhoAmI />
         </div>
-        <div id="formations">
+        <div id="formations" className="animate-section">
           <Formations />
         </div>
-        <div id="services-products">
+        <div id="services-products" className="animate-section">
           <ServicesProducts />
         </div>
-        <div id="services">
+        <div id="services" className="animate-section">
           <Services />
         </div>
-        <div id="contact">
+        <div id="contact" className="animate-section">
           <Contact />
         </div>
       </main>
