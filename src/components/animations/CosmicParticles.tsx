@@ -13,7 +13,9 @@ const CosmicParticles = () => {
 
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
-      particle.className = 'absolute w-1 h-1 bg-cosmic-stellar-gold/30 rounded-full';
+      particle.className = 'absolute w-1 h-1 rounded-full';
+      particle.style.backgroundColor = '#DAA520';
+      particle.style.opacity = '0.3';
       
       // Random initial positions
       gsap.set(particle, {
@@ -53,7 +55,7 @@ const CosmicParticles = () => {
       // Add pulsing effect to some particles
       if (i % 5 === 0) {
         gsap.to(particle, {
-          boxShadow: "0 0 20px hsl(var(--cosmic-stellar-gold) / 0.6)",
+          boxShadow: "0 0 20px rgba(218, 165, 32, 0.6)",
           duration: 2,
           repeat: -1,
           yoyo: true,
