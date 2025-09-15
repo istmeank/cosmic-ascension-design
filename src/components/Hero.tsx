@@ -24,7 +24,7 @@ const Hero = () => {
           />
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-stellar-gold/80 hover:from-cosmic-stellar-gold/90 hover:to-cosmic-stellar-gold/70 text-cosmic-deep-space font-semibold px-8 py-4 text-lg"
+            className="bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-stellar-gold/80 hover:from-cosmic-stellar-gold/90 hover:to-cosmic-stellar-gold/70 text-cosmic-deep-space font-semibold px-12 py-6 text-xl -mt-8"
           >
             S'inscrire
           </Button>
