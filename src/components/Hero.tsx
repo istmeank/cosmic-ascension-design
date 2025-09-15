@@ -24,7 +24,7 @@ const Hero = () => {
           />
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-stellar-gold/80 hover:from-cosmic-stellar-gold/90 hover:to-cosmic-stellar-gold/70 text-cosmic-deep-space font-semibold px-12 py-6 text-xl -mt-8 animate-pulse hover:animate-none hover:scale-105 transition-all duration-300 shadow-[0_0_30px_hsl(var(--cosmic-stellar-gold)/0.5)] hover:shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold)/0.8)] cosmic-glow"
+            className="bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-stellar-gold/80 hover:from-cosmic-stellar-gold/90 hover:to-cosmic-stellar-gold/70 text-cosmic-deep-space font-semibold px-12 py-6 text-xl -mt-8 hover:scale-105 transition-all duration-300 shadow-[0_0_30px_hsl(var(--cosmic-stellar-gold)/0.5)] hover:shadow-[0_0_40px_hsl(var(--cosmic-stellar-gold)/0.8)] cosmic-glow"
             onClick={() => navigate('/auth')}
           >
             S'inscrire
