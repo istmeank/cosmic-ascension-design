@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const WhoAmI = () => {
   return (
@@ -17,8 +18,12 @@ const WhoAmI = () => {
             <div className="w-full max-w-md mx-auto relative">
               <div className="absolute inset-0 bg-gradient-to-br from-cosmic-stellar-gold/20 to-cosmic-nebula-green/20 rounded-full blur-2xl"></div>
               <div className="relative bg-gradient-to-br from-card to-cosmic-deep-space rounded-full p-8 border border-cosmic-stellar-gold/30">
-                <div className="w-full aspect-square bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 rounded-full flex items-center justify-center">
-                  <div className="text-6xl cosmic-text">👨‍💼</div>
+                <div className="w-full aspect-square bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 rounded-full overflow-hidden">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Photo de profil - Coach en développement personnel"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
