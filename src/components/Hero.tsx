@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Contenu principal */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Logo principal centré */}
-        <div className="mb-12 mt-[6vh]">
+        <div className="mb-20 mt-[6vh]">
           <div className="relative inline-block">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               <img src="/logo-level-up-new.svg" alt="LEVEL UP" className="w-full h-full" />
@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col gap-4 justify-center items-center -mt-[25vh]">
+        <div className="flex flex-col gap-6 justify-center items-center mt-8 md:mt-12">
           <Button variant="royal" size="xl" onClick={() => navigate("/auth?tab=signup")}>
             S'inscrire
           </Button>
