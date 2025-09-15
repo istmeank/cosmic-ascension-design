@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
+  console.log("Mount: Hero rendered");
 
   return (
     <section

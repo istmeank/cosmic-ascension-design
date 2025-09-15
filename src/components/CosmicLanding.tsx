@@ -9,6 +9,7 @@ import Contact from "./Contact";
 import AdminAccess from "./AdminAccess";
 
 const CosmicLanding = () => {
+  console.log("Mount: CosmicLanding rendered");
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <AdminAccess />
