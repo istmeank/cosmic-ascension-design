@@ -3,7 +3,6 @@ import heroBackground from "@/assets/level-up-background.svg";
 import { useNavigate } from "react-router-dom";
 import { useGSAPAnimations } from "@/hooks/useGSAPAnimations";
 import CosmicParticles from "./animations/CosmicParticles";
-import AnimatedLogo from "./animations/AnimatedLogo";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -55,11 +54,16 @@ const Hero = () => {
       </div>
       {/* Contenu principal */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        {/* Logo principal avec animation */}
+        {/* Slogan */}
+        <p className="hero-text text-xl md:text-2xl text-cosmic-star-white/80 mb-12 leading-relaxed">
+          Éveille ta puissance intérieure et transforme ton destin dans l'énergie cosmique de l'élévation
+        </p>
+
+        {/* Logo principal centré */}
         <div className="hero-logo mb-8">
           <div className="relative inline-block">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
-              <AnimatedLogo />
+              <img src="/level-up-new-logo.png" alt="LEVEL UP for Ladies & Gentlemen" className="w-full h-full" />
             </div>
           </div>
         </div>
