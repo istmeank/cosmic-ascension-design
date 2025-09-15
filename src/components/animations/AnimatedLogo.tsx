@@ -7,82 +7,102 @@ const AnimatedLogo = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const elements = {
-      base: containerRef.current.querySelector('.logo-base'),
-      columns: [
-        containerRef.current.querySelector('.column-1'),
-        containerRef.current.querySelector('.column-2'), 
-        containerRef.current.querySelector('.column-3'),
-        containerRef.current.querySelector('.column-4'),
-        containerRef.current.querySelector('.column-5'),
-        containerRef.current.querySelector('.column-6'),
-      ],
-      plus: containerRef.current.querySelector('.logo-plus'),
-      textLadies: containerRef.current.querySelector('.text-ladies'),
-      textGentlemen: containerRef.current.querySelector('.text-gentlemen'),
-    };
+    // Récupération sécurisée des éléments (filtrage des null)
+    const base = containerRef.current.querySelector('.logo-base') as HTMLElement | null;
+    const columns = [
+      containerRef.current.querySelector('.column-1'),
+      containerRef.current.querySelector('.column-2'),
+      containerRef.current.querySelector('.column-3'),
+      containerRef.current.querySelector('.column-4'),
+      containerRef.current.querySelector('.column-5'),
+      containerRef.current.querySelector('.column-6'),
+    ].filter(Boolean) as HTMLElement[];
+    const plus = containerRef.current.querySelector('.logo-plus') as HTMLElement | null;
+    const textLadies = containerRef.current.querySelector('.text-ladies') as HTMLElement | null;
+    const textGentlemen = containerRef.current.querySelector('.text-gentlemen') as HTMLElement | null;
 
-    // Masquer tous les éléments au début
-    gsap.set([elements.base, ...elements.columns, elements.plus, elements.textLadies, elements.textGentlemen], {
-      opacity: 0,
-      scale: 0,
-      transformOrigin: "center bottom"
-    });
+    // Masquer tous les éléments au début (uniquement ceux présents)
+    const initialTargets: HTMLElement[] = [];
+    if (base) initialTargets.push(base);
+    initialTargets.push(...columns);
+    if (plus) initialTargets.push(plus);
+    if (textLadies) initialTargets.push(textLadies);
+    if (textGentlemen) initialTargets.push(textGentlemen);
+
+    if (initialTargets.length) {
+      gsap.set(initialTargets, {
+        opacity: 0,
+        scale: 0,
+        transformOrigin: 'center bottom',
+      });
+    }
 
     // Timeline d'animation
-    const tl = gsap.timeline({ delay: 0.5 });
+    const tl = gsap.timeline({ delay: 0.2 });
 
     // 1. Base (cube du U) apparaît en premier
-    tl.to(elements.base, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.8,
-      ease: "back.out(1.7)"
-    });
+    if (base) {
+      tl.to(base, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+      });
+    }
 
     // 2. Colonnes apparaissent du centre vers l'extérieur
-    // Colonnes centrales (les plus hautes)
-    tl.to([elements.columns[2], elements.columns[3]], {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "back.out(1.7)"
-    }, "+=0.3");
+    const centers = [columns[2], columns[3]].filter(Boolean);
+    const mids = [columns[1], columns[4]].filter(Boolean);
+    const outers = [columns[0], columns[5]].filter(Boolean);
 
-    // Colonnes moyennes
-    tl.to([elements.columns[1], elements.columns[4]], {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "back.out(1.7)"
-    }, "+=0.2");
-
-    // Colonnes extérieures
-    tl.to([elements.columns[0], elements.columns[5]], {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "back.out(1.7)"
-    }, "+=0.2");
+    if (centers.length) {
+      tl.to(centers, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'back.out(1.7)',
+      }, '+=0.2');
+    }
+    if (mids.length) {
+      tl.to(mids, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'back.out(1.7)',
+      }, '+=0.15');
+    }
+    if (outers.length) {
+      tl.to(outers, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'back.out(1.7)',
+      }, '+=0.15');
+    }
 
     // 3. Signe plus
-    tl.to(elements.plus, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.5,
-      ease: "back.out(1.7)",
-      transformOrigin: "center center"
-    }, "+=0.2");
+    if (plus) {
+      tl.to(plus, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: 'back.out(1.7)',
+        transformOrigin: 'center center',
+      }, '+=0.15');
+    }
 
     // 4. Texte en dernier
-    tl.to([elements.textLadies, elements.textGentlemen], {
-      opacity: 1,
-      scale: 1,
-      duration: 0.8,
-      ease: "back.out(1.7)",
-      stagger: 0.2,
-      transformOrigin: "center center"
-    }, "+=0.3");
+    const texts = [textLadies, textGentlemen].filter(Boolean) as HTMLElement[];
+    if (texts.length) {
+      tl.to(texts, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: 'back.out(1.7)',
+        stagger: 0.15,
+        transformOrigin: 'center center',
+      }, '+=0.2');
+    }
 
   }, []);
 

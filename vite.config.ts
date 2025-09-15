@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   // Set base path for GitHub Pages: https://{user}.github.io/{repo}/
-  base: "/cosmic-ascension-design/",
+  base: mode === "production" ? "/cosmic-ascension-design/" : "/",
   build: {
     outDir: "dist",
   },
