@@ -6,13 +6,16 @@ import Formations from "./Formations";
 import ServicesProducts from "./ServicesProducts";
 import Services from "./Services";
 import Contact from "./Contact";
+import SmoothScroll from "./animations/SmoothScroll";
+import CosmicParticles from "./animations/CosmicParticles";
 import AdminAccess from "./AdminAccess";
 
 const CosmicLanding = () => {
-  console.log("Mount: CosmicLanding rendered");
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      <CosmicParticles />
       <AdminAccess />
+      <SmoothScroll />
       <Navigation />
       <main>
         <Hero />
