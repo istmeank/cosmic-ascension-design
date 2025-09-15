@@ -15,9 +15,4 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Set base path for GitHub Pages: https://{user}.github.io/{repo}/
-  base: "/cosmic-ascension-design/",
-  build: {
-    outDir: "dist",
-  },
 }));

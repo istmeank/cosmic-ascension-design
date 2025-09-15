@@ -146,10 +146,11 @@ const Auth = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img 
-            src="/logo-for-ladies-gentlemen.png" 
-            alt="LEVEL UP for Ladies & Gentlemen" 
-            className="h-20 w-auto object-contain mx-auto mb-4 filter drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold)/0.8)]"
+            src="/logo-level-up.svg" 
+            alt="LEVEL UP" 
+            className="w-16 h-16 mx-auto mb-4 filter drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold)/0.8)]"
           />
+          <h1 className="text-3xl font-bold cosmic-text mb-2">LEVEL UP</h1>
           <p className="text-muted-foreground">Rejoignez l'univers cosmique</p>
         </div>
 

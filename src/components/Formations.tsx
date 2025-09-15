@@ -123,11 +123,11 @@ const Formations = () => {
     <section className="py-20 px-6 bg-gradient-to-br from-cosmic-deep-space via-background to-cosmic-deep-space">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-reveal text-4xl md:text-5xl font-bold cosmic-text mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold cosmic-text mb-6">
             Formations Exclusives
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
-          <p className="text-reveal text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Développez vos compétences avec nos formations premium conçues pour les Ladies & Gentlemen ambitieux
           </p>
         </div>
@@ -143,7 +143,7 @@ const Formations = () => {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {formations.map((formation) => (
-              <Card key={formation.id} className="hover-card bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group">
+              <Card key={formation.id} className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 hover:border-cosmic-stellar-gold/40 transition-all duration-300 group">
                 <div className="relative overflow-hidden rounded-t-lg">
                   {formation.thumbnail_url ? (
                     <img 
@@ -192,14 +192,14 @@ const Formations = () => {
                     </div>
 
                     {isPurchased(formation.id) ? (
-                      <Button variant="stellar" className="gap-2 cosmic-button">
+                      <Button variant="stellar" className="gap-2">
                         <Play className="w-4 h-4" />
                         Regarder
                       </Button>
                     ) : (
                       <Button 
                         variant="outline" 
-                        className="gap-2 border-cosmic-stellar-gold/30 hover:bg-cosmic-stellar-gold/10 cosmic-button"
+                        className="gap-2 border-cosmic-stellar-gold/30 hover:bg-cosmic-stellar-gold/10"
                         onClick={() => handlePurchase(formation)}
                       >
                         <Lock className="w-4 h-4" />

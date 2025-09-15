@@ -199,7 +199,7 @@ const FormationUpload = () => {
                       const file = e.target.files?.[0];
                       if (file) {
                         // Logique d'upload après création de la formation
-                        // TODO: appeler handleVideoUpload une fois l'ID formation disponible
+                        console.log('Video file selected:', file.name);
                       }
                     }}
                   />
@@ -230,7 +230,7 @@ const FormationUpload = () => {
                     onChange={(e) => {
                       const file = e.target.files?.[0];
                       if (file) {
-                        // TODO: appeler handleThumbnailUpload une fois l'ID formation disponible
+                        console.log('Thumbnail file selected:', file.name);
                       }
                     }}
                   />

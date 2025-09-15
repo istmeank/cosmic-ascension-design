@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -94,69 +93,12 @@ export default {
             height: "0",
           },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
-        },
-        "pulse-glow": {
-          "0%": {
-            boxShadow: "0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3)",
-          },
-          "100%": {
-            boxShadow:
-              "0 0 40px hsl(var(--cosmic-stellar-gold) / 0.8), 0 0 60px hsl(var(--cosmic-nebula-green) / 0.4)",
-          },
-        },
-        "nebula-pulse": {
-          "0%, 100%": {
-            transform: "scale(1) rotate(0deg)",
-            opacity: "0.3",
-          },
-          "50%": {
-            transform: "scale(1.1) rotate(180deg)",
-            opacity: "0.6",
-          },
-        },
-        "nebula-drift": {
-          "0%": {
-            transform: "translateX(0px) translateY(0px)",
-          },
-          "25%": {
-            transform: "translateX(10px) translateY(-5px)",
-          },
-          "50%": {
-            transform: "translateX(-5px) translateY(10px)",
-          },
-          "75%": {
-            transform: "translateX(-10px) translateY(-5px)",
-          },
-          "100%": {
-            transform: "translateX(0px) translateY(0px)",
-          },
-        },
-        "nebula-glow": {
-          "0%, 100%": {
-            filter: "brightness(1) blur(0px)",
-          },
-          "50%": {
-            filter: "brightness(1.2) blur(1px)",
-          },
-        },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        float: "float 6s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 3s ease-in-out infinite alternate",
-        "spin-slow": "spin 8s linear infinite",
-        "nebula-pulse": "nebula-pulse 8s ease-in-out infinite",
-        "nebula-drift": "nebula-drift 12s ease-in-out infinite",
-        "nebula-glow": "nebula-glow 6s ease-in-out infinite",
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
