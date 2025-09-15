@@ -1,17 +1,15 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/level-up-background.svg";
 import { useNavigate } from "react-router-dom";
-
 const Hero = () => {
   const navigate = useNavigate();
-  return (
-    <section className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden" style={{
-      backgroundImage: `url(${heroBackground})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
-      backgroundRepeat: 'no-repeat'
-    }}>
+  return <section className="relative min-h-screen pt-24 flex items-center justify-center overflow-hidden" style={{
+    backgroundImage: `url(${heroBackground})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed',
+    backgroundRepeat: 'no-repeat'
+  }}>
       {/* Overlay pour améliorer la lisibilité */}
       <div className="absolute inset-0 bg-cosmic-deep-space/40" />
       
@@ -28,7 +26,7 @@ const Hero = () => {
 
         {/* CTAs */}
         <div className="flex flex-col gap-6 justify-center items-center mt-8 md:mt-12">
-          <Button variant="royal" size="xl" onClick={() => navigate("/auth?tab=signup")}>
+          <Button variant="royal" size="xl" onClick={() => navigate("/auth?tab=signup")} className="mx-0 py-[2px]">
             S'inscrire
           </Button>
           <Button variant="cosmic" size="lg" onClick={() => navigate("/auth?tab=signin")}>
@@ -36,7 +34,6 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 export default Hero;
