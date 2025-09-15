@@ -48,6 +48,8 @@ All colors MUST be HSL.
     --cosmic-stellar-gold: 45 100% 65%;
     --cosmic-deep-space: 220 15% 3%;
     --cosmic-star-white: 60 100% 95%;
+    --cosmic-purple-pink: 320 70% 65%;
+    --cosmic-royal-blue: 225 100% 50%;
 
     /* Gradients */
     --gradient-cosmic: linear-gradient(135deg, hsl(var(--cosmic-nebula-purple)) 0%, hsl(var(--cosmic-nebula-green)) 50%, hsl(var(--cosmic-stellar-gold)) 100%);
@@ -180,7 +182,6 @@ All colors MUST be HSL.
     animation: nebula-glow 6s ease-in-out infinite !important;
   }
 }
-
 @layer components {
   .cosmic-glow {
     box-shadow: var(--glow-stellar);
@@ -208,18 +209,6 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  .animate-pulse-glow {
-    animation: pulseGlow 3s ease-in-out infinite alternate;
-  }
-  
-  .animate-spin-slow {
-    animation: spin 8s linear infinite;
-  }
-  
   .bg-gradient-radial {
     background: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
@@ -229,17 +218,3 @@ All colors MUST be HSL.
   }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes pulseGlow {
-  0% { 
-    box-shadow: 0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3);
-  }
-  100% { 
-    box-shadow: 0 0 40px hsl(var(--cosmic-stellar-gold) / 0.8), 
-                0 0 60px hsl(var(--cosmic-nebula-green) / 0.4);
-  }
-}

@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'tangerine': ['Tangerine', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -64,6 +67,8 @@ export default {
           "stellar-gold": "hsl(var(--cosmic-stellar-gold))",
           "deep-space": "hsl(var(--cosmic-deep-space))",
           "star-white": "hsl(var(--cosmic-star-white))",
+          "purple-pink": "hsl(var(--cosmic-purple-pink))",
+          "royal-blue": "hsl(var(--cosmic-royal-blue))",
         },
       },
       borderRadius: {
@@ -93,46 +98,47 @@ export default {
           "50%": { transform: "translateY(-20px)" },
         },
         "pulse-glow": {
-          "0%": { 
-            boxShadow: "0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3)" 
+          "0%": {
+            boxShadow: "0 0 20px hsl(var(--cosmic-stellar-gold) / 0.3)",
           },
-          "100%": { 
-            boxShadow: "0 0 40px hsl(var(--cosmic-stellar-gold) / 0.8), 0 0 60px hsl(var(--cosmic-nebula-green) / 0.4)" 
+          "100%": {
+            boxShadow:
+              "0 0 40px hsl(var(--cosmic-stellar-gold) / 0.8), 0 0 60px hsl(var(--cosmic-nebula-green) / 0.4)",
           },
         },
         "nebula-pulse": {
-          "0%, 100%": { 
+          "0%, 100%": {
             transform: "scale(1) rotate(0deg)",
-            opacity: "0.3"
+            opacity: "0.3",
           },
-          "50%": { 
+          "50%": {
             transform: "scale(1.1) rotate(180deg)",
-            opacity: "0.6"
+            opacity: "0.6",
           },
         },
         "nebula-drift": {
-          "0%": { 
-            transform: "translateX(0px) translateY(0px)"
+          "0%": {
+            transform: "translateX(0px) translateY(0px)",
           },
-          "25%": { 
-            transform: "translateX(10px) translateY(-5px)"
+          "25%": {
+            transform: "translateX(10px) translateY(-5px)",
           },
-          "50%": { 
-            transform: "translateX(-5px) translateY(10px)"
+          "50%": {
+            transform: "translateX(-5px) translateY(10px)",
           },
-          "75%": { 
-            transform: "translateX(-10px) translateY(-5px)"
+          "75%": {
+            transform: "translateX(-10px) translateY(-5px)",
           },
-          "100%": { 
-            transform: "translateX(0px) translateY(0px)"
+          "100%": {
+            transform: "translateX(0px) translateY(0px)",
           },
         },
         "nebula-glow": {
-          "0%, 100%": { 
-            filter: "brightness(1) blur(0px)"
+          "0%, 100%": {
+            filter: "brightness(1) blur(0px)",
           },
-          "50%": { 
-            filter: "brightness(1.2) blur(1px)"
+          "50%": {
+            filter: "brightness(1.2) blur(1px)",
           },
         },
       },
