@@ -37,10 +37,9 @@ const CosmicLanding = () => {
       <footer className="border-t border-cosmic-stellar-gold/20 bg-cosmic-deep-space/50 backdrop-blur-sm py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-8">
-            <h3 className="text-2xl font-bold cosmic-text mb-4">LEVEL UP</h3>
-            <p className="text-muted-foreground">
-              for Ladies & Gentlemen
-            </p>
+            <div className="flex justify-center mb-4">
+              <img src="/logo-level-up-new.svg" alt="LEVEL UP" className="h-16 w-auto" />
+            </div>
           </div>
           
           <div className="flex flex-wrap justify-center gap-8 mb-8 text-sm">

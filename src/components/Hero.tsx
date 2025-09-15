@@ -21,7 +21,7 @@ const Hero = () => {
         <div className="mb-12 mt-[30vh]">
           <div className="relative inline-block">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
-              <img src="/level-up-new-logo.png" alt="LEVEL UP for Ladies & Gentlemen" className="w-full h-full" />
+              <img src="/logo-level-up-new.svg" alt="LEVEL UP" className="w-full h-full" />
             </div>
           </div>
         </div>
