@@ -22,6 +22,12 @@ const Hero = () => {
             alt="For Ladies Gentlemen" 
             className="w-64 h-64 md:w-80 md:h-80 object-contain mb-10 md:mb-12"
           />
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-stellar-gold/80 hover:from-cosmic-stellar-gold/90 hover:to-cosmic-stellar-gold/70 text-cosmic-deep-space font-semibold px-8 py-4 text-lg"
+          >
+            S'inscrire
+          </Button>
         </div>
       </div>
       
