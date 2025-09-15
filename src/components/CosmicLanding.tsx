@@ -7,10 +7,14 @@ import ServicesProducts from "./ServicesProducts";
 import Services from "./Services";
 import Contact from "./Contact";
 import SmoothScroll from "./animations/SmoothScroll";
+import CosmicParticles from "./animations/CosmicParticles";
+import AdminAccess from "./AdminAccess";
 
 const CosmicLanding = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <CosmicParticles />
+      <AdminAccess />
       <SmoothScroll />
       <Navigation />
       <main>
