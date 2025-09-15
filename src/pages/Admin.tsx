@@ -43,7 +43,7 @@ interface Service {
   type: string;
   is_active: boolean;
   image_url: string;
-  features: any;
+  features?: unknown;
 }
 
 const Admin = () => {

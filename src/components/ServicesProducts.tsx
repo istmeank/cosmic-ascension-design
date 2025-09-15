@@ -13,7 +13,7 @@ interface ServiceProduct {
   price: number;
   type: string; // Changed from 'service' | 'product' to string
   image_url: string | null;
-  features: any; // Changed from string[] to any to handle Json type
+  features?: unknown; // Accept any JSON; we guard at use sites
   is_active: boolean;
 }
 
