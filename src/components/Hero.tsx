@@ -20,7 +20,7 @@ const Hero = () => {
           <img 
             src={forLadiesGentlemenLogo} 
             alt="For Ladies Gentlemen" 
-            className="w-80 h-80 md:w-96 md:h-96 object-contain mb-10 md:mb-12 -mt-20"
+            className="w-96 h-96 md:w-[28rem] md:h-[28rem] object-contain mb-10 md:mb-12 -mt-32"
           />
           <Button 
             size="lg" 
