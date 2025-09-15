@@ -18,18 +18,13 @@ const Hero = () => {
       {/* Contenu principal */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         {/* Logo principal centré */}
-        <div className="mb-8">
+        <div className="mb-12">
           <div className="relative inline-block">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               <img src="/level-up-new-logo.png" alt="LEVEL UP for Ladies & Gentlemen" className="w-full h-full" />
             </div>
           </div>
         </div>
-
-        {/* Slogan */}
-        <p className="text-xl md:text-2xl text-cosmic-star-white/80 mb-12 leading-relaxed">
-          Éveille ta puissance intérieure et transforme ton destin dans l'énergie cosmique de l'élévation
-        </p>
 
         {/* CTAs */}
         <div className="flex flex-col gap-4 justify-center items-center">
