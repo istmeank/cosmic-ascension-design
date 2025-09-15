@@ -54,6 +54,11 @@ const Hero = () => {
       </div>
       {/* Contenu principal */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        {/* Slogan */}
+        <p className="hero-text text-xl md:text-2xl text-cosmic-star-white/80 mb-12 leading-relaxed">
+          Éveille ta puissance intérieure et transforme ton destin dans l'énergie cosmique de l'élévation
+        </p>
+
         {/* Logo principal centré */}
         <div className="hero-logo mb-8">
           <div className="relative inline-block">
@@ -62,11 +67,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
-        {/* Slogan */}
-        <p className="hero-text text-xl md:text-2xl text-cosmic-star-white/80 mb-12 leading-relaxed">
-          Éveille ta puissance intérieure et transforme ton destin dans l'énergie cosmique de l'élévation
-        </p>
 
         {/* CTAs */}
         <div className="hero-buttons flex flex-col gap-4 justify-center items-center">
