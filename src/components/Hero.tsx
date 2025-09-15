@@ -27,7 +27,7 @@ const Hero = () => {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col gap-4 justify-center items-center -mt-[25vh]">
           <Button variant="royal" size="xl" onClick={() => navigate("/auth?tab=signup")}>
             S'inscrire
           </Button>
