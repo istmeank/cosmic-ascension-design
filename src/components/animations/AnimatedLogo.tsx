@@ -91,37 +91,40 @@ const AnimatedLogo = () => {
       ref={containerRef}
       className="w-full h-full flex flex-col items-center justify-center relative"
     >
-      {/* Logo LEVEL UP - Barres avec forme de U */}
-      <div className="relative mb-6">
-        {/* Barres de gauche */}
-        <div className="column-1 absolute w-4 h-16 bg-cosmic-stellar-gold rounded-sm" style={{ left: '-90px', top: '20px' }}></div>
-        <div className="column-2 absolute w-4 h-20 bg-cosmic-stellar-gold rounded-sm" style={{ left: '-70px', top: '16px' }}></div>
-        <div className="column-3 absolute w-6 h-24 bg-cosmic-stellar-gold rounded-sm" style={{ left: '-48px', top: '12px' }}></div>
+      {/* Logo LEVEL UP - Structure en forme de U */}
+      <div className="relative mb-8 w-48 h-32 flex items-end justify-center">
+        {/* Barres de gauche à droite */}
+        <div className="column-1 w-3 h-16 bg-cosmic-stellar-gold rounded-sm mr-2"></div>
+        <div className="column-2 w-3 h-20 bg-cosmic-stellar-gold rounded-sm mr-2"></div>
+        <div className="column-3 w-4 h-24 bg-cosmic-stellar-gold rounded-sm mr-2"></div>
         
         {/* Base du U */}
-        <div className="logo-base w-20 h-6 bg-cosmic-stellar-gold rounded-sm mx-auto mt-8"></div>
+        <div className="logo-base w-16 h-4 bg-cosmic-stellar-gold rounded-sm mx-2 mb-0"></div>
         
         {/* Barres de droite */}
-        <div className="column-4 absolute w-6 h-24 bg-cosmic-stellar-gold rounded-sm" style={{ right: '-48px', top: '12px' }}></div>
-        <div className="column-5 absolute w-4 h-20 bg-cosmic-stellar-gold rounded-sm" style={{ right: '-70px', top: '16px' }}></div>
-        <div className="column-6 absolute w-4 h-16 bg-cosmic-stellar-gold rounded-sm" style={{ right: '-90px', top: '20px' }}></div>
+        <div className="column-4 w-4 h-24 bg-cosmic-stellar-gold rounded-sm ml-2"></div>
+        <div className="column-5 w-3 h-20 bg-cosmic-stellar-gold rounded-sm ml-2"></div>
+        <div className="column-6 w-3 h-16 bg-cosmic-stellar-gold rounded-sm ml-2"></div>
         
         {/* Signe plus */}
-        <div className="logo-plus absolute -top-8 -right-12">
-          <div className="relative w-8 h-8">
-            <div className="absolute w-8 h-1 bg-cosmic-star-white rounded-full top-1/2 left-0 transform -translate-y-1/2"></div>
-            <div className="absolute w-1 h-8 bg-cosmic-star-white rounded-full left-1/2 top-0 transform -translate-x-1/2"></div>
+        <div className="logo-plus absolute -top-4 -right-8">
+          <div className="relative w-6 h-6">
+            <div className="absolute w-6 h-0.5 bg-cosmic-star-white rounded-full top-1/2 left-0 transform -translate-y-1/2"></div>
+            <div className="absolute w-0.5 h-6 bg-cosmic-star-white rounded-full left-1/2 top-0 transform -translate-x-1/2"></div>
           </div>
         </div>
       </div>
 
       {/* Texte LEVEL UP */}
-      <div className="text-center">
-        <div className="text-ladies text-2xl font-bold text-pink-500 mb-2" style={{ fontFamily: 'cursive' }}>
+      <div className="text-center space-y-2">
+        <div className="text-3xl font-bold bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-star-white bg-clip-text text-transparent">
+          LEVEL UP
+        </div>
+        <div className="text-ladies text-lg font-semibold text-pink-400">
           For Ladies
         </div>
-        <div className="text-gentlemen text-3xl font-bold text-blue-500" style={{ fontFamily: 'cursive' }}>
-          Gentlemen
+        <div className="text-gentlemen text-lg font-semibold text-blue-400">
+          & Gentlemen
         </div>
       </div>
     </div>
