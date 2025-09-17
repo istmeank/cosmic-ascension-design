@@ -6,6 +6,7 @@ import Formations from "./Formations";
 import ServicesProducts from "./ServicesProducts";
 import Services from "./Services";
 import Contact from "./Contact";
+import logoLevelUp from "@/assets/logo-level-up-new.png";
 
 const CosmicLanding = () => {
   return (
@@ -38,7 +39,7 @@ const CosmicLanding = () => {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-8">
             <div className="flex justify-center mb-4">
-              <img src="/logo-level-up-new.svg" alt="LEVEL UP" className="h-16 w-auto" />
+              <img src={logoLevelUp} alt="LEVEL UP" className="h-16 w-auto" />
             </div>
           </div>
           

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import logoLevelUp from "@/assets/logo-level-up-new.png";
 
 const Navigation = () => {
   return (
@@ -8,7 +9,7 @@ const Navigation = () => {
         <div className="relative flex items-center">
           <div className="absolute inset-0 bg-cosmic-deep-space/60 backdrop-blur-md rounded-lg -z-10 transform scale-110"></div>
           <img 
-            src="/logo-level-up-new.svg" 
+            src={logoLevelUp} 
             alt="LEVEL UP" 
             className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300 filter hover:drop-shadow-[0_0_8px_hsl(var(--cosmic-stellar-gold)/0.6)] relative z-10"
           />
