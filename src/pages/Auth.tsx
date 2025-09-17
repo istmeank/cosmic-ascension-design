@@ -151,7 +151,7 @@ const Auth = () => {
           type="submit"
           disabled={loading}
           className="w-full"
-          variant={mode === "signup" ? "royal" : "cosmic"}
+          variant={mode === "signup" ? "darkCosmic" : "cosmic"}
         >
           {loading ? "Chargement..." : mode === "signup" ? "S'inscrire" : "Se connecter"}
         </Button>
