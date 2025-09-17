@@ -172,7 +172,7 @@ const Formations = () => {
                 </div>
 
                 <CardHeader>
-                  <CardTitle className="cosmic-text text-xl mb-2">Les Mécanismes de la Communication éffective</CardTitle>
+                  <CardTitle className="cosmic-text text-xl mb-2">{formation.title}</CardTitle>
                   {formation.duration && (
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="w-4 h-4 mr-1" />
