@@ -35,7 +35,7 @@ const Navigation = () => {
 
         {/* CTA Button */}
         <Button variant="stellar" size="sm">
-          Commencer
+          Se connecter
         </Button>
       </div>
     </nav>
