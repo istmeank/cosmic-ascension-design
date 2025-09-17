@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import logoLevelUp from "@/assets/logo-level-up-new.png";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+  const navigate = useNavigate();
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-cosmic-deep-space/80 backdrop-blur-lg border-b border-cosmic-stellar-gold/20">
       <div className="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
@@ -35,7 +37,11 @@ const Navigation = () => {
         </div>
 
         {/* CTA Button */}
-        <Button variant="stellar" size="sm">
+        <Button 
+          variant="stellar" 
+          size="sm"
+          onClick={() => navigate("/auth")}
+        >
           Se connecter
         </Button>
       </div>

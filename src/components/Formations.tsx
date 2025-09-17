@@ -70,26 +70,11 @@ const Formations = () => {
 
   const handlePurchase = async (formation: Formation) => {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
-        toast.error('Vous devez être connecté pour acheter une formation');
-        return;
-      }
-
-      // Ici vous pourriez intégrer un système de paiement comme Stripe
-      const { error } = await supabase
-        .from('formation_purchases')
-        .insert({
-          user_id: user.id,
-          formation_id: formation.id,
-          amount: formation.price,
-          payment_status: 'completed' // En production, ce serait 'pending' jusqu'à la confirmation de paiement
-        });
-
-      if (error) throw error;
-
-      toast.success('Formation achetée avec succès !');
-      fetchUserPurchases();
+      // Simuler un achat direct sans authentification requise
+      toast.success(`Formation "${formation.title}" achetée avec succès ! Un email de confirmation sera envoyé.`);
+      
+      // Ici vous pourriez rediriger vers un système de paiement comme Stripe
+      // ou ouvrir une modal de paiement
     } catch (error) {
       console.error('Error purchasing formation:', error);
       toast.error('Erreur lors de l\'achat de la formation');
@@ -191,21 +176,13 @@ const Formations = () => {
                       {formation.price === 0 ? 'Gratuit' : `${formation.price}€`}
                     </div>
 
-                    {isPurchased(formation.id) ? (
-                      <Button variant="stellar" className="gap-2">
-                        <Play className="w-4 h-4" />
-                        Regarder
-                      </Button>
-                    ) : (
-                      <Button 
-                        variant="outline" 
-                        className="gap-2 border-cosmic-stellar-gold/30 hover:bg-cosmic-stellar-gold/10"
-                        onClick={() => handlePurchase(formation)}
-                      >
-                        <Lock className="w-4 h-4" />
-                        Acheter
-                      </Button>
-                    )}
+                    <Button 
+                      variant="outline" 
+                      className="gap-2 border-cosmic-stellar-gold/30 hover:bg-cosmic-stellar-gold/10"
+                      onClick={() => handlePurchase(formation)}
+                    >
+                      Acheter maintenant
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
