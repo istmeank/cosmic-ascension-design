@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'tangerine': ['Tangerine', 'cursive'],
+        'adlery': ['Allura', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
