@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.png";
-import quiSuisJeLogo from "@/assets/qui-suis-je-logo.svg";
+import quiSuisJeLogo from "@/assets/qui-suis-je-title.png";
 
 const WhoAmI = () => {
   return (
