@@ -92,6 +92,8 @@ const Auth = () => {
 
   const signInWithGoogle = async () => {
     setLoading(true);
+    console.log('Initiating Google authentication...');
+    console.log('Current URL:', window.location.origin);
     
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
@@ -103,8 +105,24 @@ const Auth = () => {
     setLoading(false);
     
     if (error) {
-      toast.error("Erreur lors de la connexion avec Google");
-      console.error('Google auth error:', error);
+      console.error('Google auth error details:', {
+        message: error.message,
+        name: error.name,
+        status: error.status
+      });
+      
+      // Provide specific error messages based on error type
+      if (error.message.includes('403') || error.message.includes('access')) {
+        toast.error("Erreur 403: Configuration Google requise. Vérifiez les URLs autorisées dans Google Cloud Console.");
+      } else if (error.message.includes('redirect')) {
+        toast.error("Erreur de redirection. Vérifiez la configuration des URLs dans Supabase.");
+      } else if (error.message.includes('oauth')) {
+        toast.error("Erreur OAuth. Vérifiez que Google est activé dans Supabase Auth.");
+      } else {
+        toast.error(`Erreur Google Auth: ${error.message}`);
+      }
+    } else {
+      console.log('Google auth initiated successfully');
     }
   };
 
