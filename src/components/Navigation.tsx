@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import logoLevelUp from "@/assets/logo-level-up-new.png";
 import { useNavigate } from "react-router-dom";
+import LanguageSelector from "./LanguageSelector";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -36,14 +37,19 @@ const Navigation = () => {
           </a>
         </div>
 
-        {/* CTA Button */}
-        <Button 
-          variant="stellar" 
-          size="sm"
-          onClick={() => navigate("/auth")}
-        >
-          Se connecter
-        </Button>
+        {/* Actions section avec sélecteur de langue et bouton de connexion */}
+        <div className="flex items-center gap-3">
+          <LanguageSelector />
+          
+          {/* CTA Button */}
+          <Button 
+            variant="stellar" 
+            size="sm"
+            onClick={() => navigate("/auth")}
+          >
+            Se connecter
+          </Button>
+        </div>
       </div>
     </nav>
   );
