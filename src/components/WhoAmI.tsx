@@ -12,66 +12,89 @@ const WhoAmI = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Photo de profil */}
+        {/* Photo de profil - centrée en haut */}
+        <div className="flex justify-center mb-16">
           <div className="relative">
-            <div className="w-80 h-80 mx-auto relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-cosmic-stellar-gold/20 to-cosmic-nebula-green/20 rounded-full blur-2xl"></div>
-              <div className="relative bg-gradient-to-br from-card to-cosmic-deep-space rounded-full p-4 border border-cosmic-stellar-gold/30 h-full">
+            <div className="w-80 h-80 relative">
+              {/* Effet nébuleux multiples couches */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cosmic-stellar-gold/30 to-cosmic-nebula-green/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-purple/20 to-cosmic-purple-pink/20 rounded-full blur-2xl"></div>
+              <div className="absolute -inset-2 bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 rounded-full blur-xl"></div>
+              
+              <div className="relative bg-gradient-to-br from-card to-cosmic-deep-space rounded-full p-4 border border-cosmic-stellar-gold/40 shadow-2xl h-full">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img 
                     src={profilePhoto} 
-                    alt="Photo de profil" 
+                    alt="Photo de profil - Le sage Roi des nuages" 
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Contenu */}
-          <div className="space-y-8">
-            <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-4">Mon Parcours</h3>
-                <p className="text-muted-foreground leading-relaxed">
+        {/* Titre honorifique */}
+        <div className="text-center mb-12">
+          <p className="text-xl text-cosmic-stellar-gold italic font-semibold">
+            "Le sage Roi des nuages"
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            Comme m'appellent affectueusement mes Padawans
+          </p>
+        </div>
+
+        {/* Contenu - en bas en colonnes */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Mon Parcours */}
+          <div className="space-y-6">
+            <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold cosmic-text mb-4">Mon Parcours</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   Fort de plusieurs années d'expérience dans le développement personnel et professionnel, 
                   j'accompagne les Ladies & Gentlemen dans leur quête d'excellence. Ma mission est de vous 
                   aider à révéler votre potentiel et à atteindre vos objectifs les plus ambitieux.
                 </p>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-4">Ma Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Je crois fermement qu'chaque personne possède un potentiel extraordinaire. Mon approche 
+          {/* Ma Vision */}
+          <div className="space-y-6">
+            <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold cosmic-text mb-4">Ma Vision</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Je crois fermement que chaque personne possède un potentiel extraordinaire. Mon approche 
                   combine méthodes éprouvées et innovations pour créer des transformations durables et 
                   significatives dans votre vie personnelle et professionnelle.
                 </p>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold cosmic-text mb-4">Mes Valeurs</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-cosmic-stellar-gold/10 rounded-lg">
-                    <div className="text-2xl mb-2">🎯</div>
-                    <div className="text-sm font-semibold text-cosmic-stellar-gold">Excellence</div>
+          {/* Mes Valeurs */}
+          <div className="space-y-6">
+            <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20 h-full">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold cosmic-text mb-4">Mes Valeurs</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-center p-3 bg-cosmic-purple-pink/10 rounded-lg">
+                    <div className="text-xl mb-1">❤️</div>
+                    <div className="text-xs font-semibold text-cosmic-purple-pink">Bienveillance</div>
                   </div>
-                  <div className="text-center p-4 bg-cosmic-nebula-green/10 rounded-lg">
-                    <div className="text-2xl mb-2">🤝</div>
-                    <div className="text-sm font-semibold text-cosmic-nebula-green">Intégrité</div>
+                  <div className="text-center p-3 bg-cosmic-stellar-gold/10 rounded-lg">
+                    <div className="text-xl mb-1">👑</div>
+                    <div className="text-xs font-semibold text-cosmic-stellar-gold">Souveraineté</div>
                   </div>
-                  <div className="text-center p-4 bg-cosmic-nebula-purple/10 rounded-lg">
-                    <div className="text-2xl mb-2">💡</div>
-                    <div className="text-sm font-semibold text-cosmic-nebula-purple">Innovation</div>
+                  <div className="text-center p-3 bg-cosmic-nebula-green/10 rounded-lg">
+                    <div className="text-xl mb-1">🙏</div>
+                    <div className="text-xs font-semibold text-cosmic-nebula-green">Acceptation</div>
                   </div>
-                  <div className="text-center p-4 bg-cosmic-purple-pink/10 rounded-lg">
-                    <div className="text-2xl mb-2">❤️</div>
-                    <div className="text-sm font-semibold text-cosmic-purple-pink">Bienveillance</div>
+                  <div className="text-center p-3 bg-cosmic-nebula-purple/10 rounded-lg">
+                    <div className="text-xl mb-1">🧠</div>
+                    <div className="text-xs font-semibold text-cosmic-nebula-purple">Sagesse</div>
                   </div>
                 </div>
               </CardContent>
