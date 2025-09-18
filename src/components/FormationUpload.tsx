@@ -132,7 +132,7 @@ const FormationUpload = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="price">Prix (€)</Label>
+                <Label htmlFor="price">Prix (DA)</Label>
                 <Input
                   id="price"
                   type="number"

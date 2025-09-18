@@ -181,7 +181,7 @@ const ServicesProducts = () => {
                   <div className="mt-auto">
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold cosmic-text">
-                        {item.price === 0 ? 'Gratuit' : `À partir de ${item.price}€`}
+                        {item.price === 0 ? 'Gratuit' : `À partir de ${item.price} DA`}
                       </div>
                     </div>
 

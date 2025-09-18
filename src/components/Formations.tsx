@@ -173,7 +173,7 @@ const Formations = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="text-2xl font-bold cosmic-text">
-                      {formation.price === 0 ? 'Gratuit' : `${formation.price}€`}
+                      {formation.price === 0 ? 'Gratuit' : `${formation.price} DA`}
                     </div>
 
                     <Button 
