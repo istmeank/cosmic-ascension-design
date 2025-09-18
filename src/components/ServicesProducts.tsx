@@ -179,10 +179,15 @@ const ServicesProducts = () => {
                   )}
 
                   <div className="mt-auto">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex flex-col mb-4">
                       <div className="text-2xl font-bold cosmic-text">
                         {item.price === 0 ? 'Gratuit' : `À partir de ${item.price} DA`}
                       </div>
+                      {item.name.includes('Livre Qui suis-je') && (
+                        <p className="text-sm text-cosmic-stellar-gold mt-2 font-medium">
+                          Exclusivement disponible pour les inscrits au programme Perception.
+                        </p>
+                      )}
                     </div>
 
                     <Button 
