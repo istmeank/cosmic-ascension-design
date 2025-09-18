@@ -12,7 +12,7 @@ import { toast } from "sonner";
 const FormationUpload = () => {
   const [loading, setLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [checkingAuth, setCheckingAuth] = useState(true);
+  const [checkingPermissions, setCheckingPermissions] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -21,42 +21,47 @@ const FormationUpload = () => {
     level: 'débutant'
   });
 
-  // Check if user is admin on component mount
   useEffect(() => {
-    const checkAdminStatus = async () => {
-      try {
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) {
-          setIsAdmin(false);
-          setCheckingAuth(false);
-          return;
-        }
-
-        const { data: profile, error } = await supabase
-          .from('profiles')
-          .select('role')
-          .eq('id', user.id)
-          .single();
-
-        if (error) {
-          console.error('Error fetching user profile:', error);
-          setIsAdmin(false);
-        } else {
-          setIsAdmin(profile?.role === 'admin');
-        }
-      } catch (error) {
-        console.error('Error checking admin status:', error);
-        setIsAdmin(false);
-      } finally {
-        setCheckingAuth(false);
-      }
-    };
-
-    checkAdminStatus();
+    checkAdminRole();
   }, []);
+
+  const checkAdminRole = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        setCheckingPermissions(false);
+        return;
+      }
+
+      const { data: profile, error } = await supabase
+        .from('profiles')
+        .select('role')
+        .eq('id', user.id)
+        .single();
+
+      if (error) {
+        console.error('Error fetching user role:', error);
+        toast.error('Erreur lors de la vérification des permissions');
+        setCheckingPermissions(false);
+        return;
+      }
+
+      setIsAdmin(profile?.role === 'admin');
+      setCheckingPermissions(false);
+    } catch (error) {
+      console.error('Error checking admin role:', error);
+      setCheckingPermissions(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isAdmin) {
+      toast.error('Accès refusé. Seuls les administrateurs peuvent créer des formations.');
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -92,6 +97,11 @@ const FormationUpload = () => {
   };
 
   const handleVideoUpload = async (file: File, formationId: string) => {
+    if (!isAdmin) {
+      toast.error('Accès refusé. Seuls les administrateurs peuvent uploader des vidéos.');
+      return;
+    }
+
     try {
       const fileExt = file.name.split('.').pop();
       const fileName = `${formationId}.${fileExt}`;
@@ -118,6 +128,11 @@ const FormationUpload = () => {
   };
 
   const handleThumbnailUpload = async (file: File, formationId: string) => {
+    if (!isAdmin) {
+      toast.error('Accès refusé. Seuls les administrateurs peuvent uploader des miniatures.');
+      return;
+    }
+
     try {
       const fileExt = file.name.split('.').pop();
       const fileName = `${formationId}-thumbnail.${fileExt}`;
@@ -147,15 +162,14 @@ const FormationUpload = () => {
     }
   };
 
-  // Show loading state while checking authentication
-  if (checkingAuth) {
+  if (checkingPermissions) {
     return (
       <div className="max-w-4xl mx-auto p-6">
         <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
-          <CardContent className="flex items-center justify-center p-12">
+          <CardContent className="p-8">
             <div className="text-center">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cosmic-stellar-gold mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Vérification des autorisations...</p>
+              <p className="text-cosmic-star-white/80">Vérification des permissions...</p>
             </div>
           </CardContent>
         </Card>
@@ -163,22 +177,21 @@ const FormationUpload = () => {
     );
   }
 
-  // Show unauthorized access message for non-admin users
   if (!isAdmin) {
     return (
       <div className="max-w-4xl mx-auto p-6">
-        <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
-          <CardContent className="text-center p-12">
-            <Shield className="w-16 h-16 text-cosmic-stellar-gold mx-auto mb-6" />
-            <h2 className="text-2xl font-bold text-cosmic-stellar-gold mb-4">
-              Accès Restreint
-            </h2>
-            <p className="text-muted-foreground mb-6">
-              Cette section est réservée aux administrateurs. Vous devez avoir des privilèges d'administrateur pour créer des formations.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Si vous pensez que c'est une erreur, veuillez contacter l'administrateur du site.
-            </p>
+        <Card className="bg-card/60 backdrop-blur-sm border-red-500/20">
+          <CardContent className="p-8">
+            <div className="text-center">
+              <Shield className="w-16 h-16 text-red-500 mx-auto mb-4" />
+              <h2 className="text-2xl font-bold text-red-500 mb-2">Accès Refusé</h2>
+              <p className="text-cosmic-star-white/80 mb-4">
+                Seuls les administrateurs peuvent accéder à cette page.
+              </p>
+              <p className="text-cosmic-star-white/60 text-sm">
+                Si vous pensez qu'il s'agit d'une erreur, contactez l'administrateur système.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
@@ -189,7 +202,10 @@ const FormationUpload = () => {
     <div className="max-w-4xl mx-auto p-6">
       <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
         <CardHeader>
-          <CardTitle className="cosmic-text text-2xl">Créer une nouvelle formation</CardTitle>
+          <CardTitle className="cosmic-text text-2xl flex items-center gap-2">
+            <Shield className="w-6 h-6 text-cosmic-stellar-gold" />
+            Créer une nouvelle formation
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
