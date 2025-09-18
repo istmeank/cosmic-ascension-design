@@ -1,14 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.png";
+import quiSuisJeLogo from "@/assets/qui-suis-je-logo.svg";
 
 const WhoAmI = () => {
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-cosmic-deep-space via-background to-cosmic-deep-space">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-adlery font-bold text-cosmic-stellar-gold mb-6 drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold))] animate-pulse">
-            Qui suis-je ?
-          </h2>
+          <img 
+            src={quiSuisJeLogo} 
+            alt="Qui suis-je ?" 
+            className="h-20 md:h-24 mx-auto mb-6 drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold))] animate-pulse"
+          />
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
         </div>
 
