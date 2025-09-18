@@ -156,19 +156,18 @@ const WhoAmI = () => {
         {/* Photo de profil - centrée en haut */}
         <div className="flex justify-center mb-16">
           <div className="relative w-80 h-80">
-              {/* Effet nébuleux multiples couches */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cosmic-stellar-gold/30 to-cosmic-nebula-green/30 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-purple/20 to-cosmic-purple-pink/20 rounded-full blur-2xl"></div>
-              <div className="absolute -inset-2 bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 rounded-full blur-xl"></div>
-              
-              <div className="relative bg-gradient-to-br from-card to-cosmic-deep-space rounded-full p-4 border border-cosmic-stellar-gold/40 shadow-2xl h-full">
-                <div className="w-full h-full rounded-full overflow-hidden">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Photo de profil - Le sage Roi des nuages" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            {/* Effet nébuleux multiples couches */}
+            <div className="absolute inset-0 bg-gradient-to-br from-cosmic-stellar-gold/30 to-cosmic-nebula-green/30 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-purple/20 to-cosmic-purple-pink/20 rounded-full blur-2xl"></div>
+            <div className="absolute -inset-2 bg-gradient-to-br from-cosmic-stellar-gold/10 to-cosmic-nebula-green/10 rounded-full blur-xl"></div>
+            
+            <div className="relative bg-gradient-to-br from-card to-cosmic-deep-space rounded-full p-4 border border-cosmic-stellar-gold/40 shadow-2xl h-full">
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img 
+                  src={profilePhoto} 
+                  alt="Photo de profil - Le sage Roi des nuages" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
