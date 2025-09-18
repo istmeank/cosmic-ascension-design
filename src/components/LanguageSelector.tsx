@@ -7,17 +7,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Languages, ChevronDown } from "lucide-react";
+import { FrenchFlag, USFlag, AlgerianFlag } from "./FlagIcons";
 
 interface Language {
   code: string;
   name: string;
-  flag: string;
+  FlagComponent: React.ComponentType<{ className?: string }>;
 }
 
 const languages: Language[] = [
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ar', name: 'العربية', flag: '🇩🇿' },
+  { code: 'fr', name: 'Français', FlagComponent: FrenchFlag },
+  { code: 'en', name: 'English', FlagComponent: USFlag },
+  { code: 'ar', name: 'العربية', FlagComponent: AlgerianFlag },
 ];
 
 const LanguageSelector = () => {
@@ -38,7 +39,7 @@ const LanguageSelector = () => {
           className="flex items-center gap-2 text-cosmic-star-white/80 hover:text-cosmic-stellar-gold hover:bg-cosmic-stellar-gold/10 border border-cosmic-stellar-gold/20 backdrop-blur-sm"
         >
           <Languages className="w-4 h-4" />
-          <span className="text-lg">{currentLanguage.flag}</span>
+          <currentLanguage.FlagComponent className="w-5 h-3" />
           <span className="hidden sm:inline">{currentLanguage.code.toUpperCase()}</span>
           <ChevronDown className="w-3 h-3" />
         </Button>
@@ -53,7 +54,7 @@ const LanguageSelector = () => {
             onClick={() => handleLanguageChange(language)}
             className="flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-cosmic-stellar-gold/10 focus:bg-cosmic-stellar-gold/10 text-cosmic-star-white/90"
           >
-            <span className="text-lg">{language.flag}</span>
+            <language.FlagComponent className="w-5 h-3" />
             <span className="flex-1">{language.name}</span>
             {currentLanguage.code === language.code && (
               <div className="w-2 h-2 rounded-full bg-cosmic-stellar-gold"></div>
