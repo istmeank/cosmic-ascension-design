@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Upload, Video, Image } from "lucide-react";
+import { Upload, Video, Image, Shield } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const FormationUpload = () => {
   const [loading, setLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -18,6 +20,40 @@ const FormationUpload = () => {
     duration: 0,
     level: 'débutant'
   });
+
+  // Check if user is admin on component mount
+  useEffect(() => {
+    const checkAdminStatus = async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) {
+          setIsAdmin(false);
+          setCheckingAuth(false);
+          return;
+        }
+
+        const { data: profile, error } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', user.id)
+          .single();
+
+        if (error) {
+          console.error('Error fetching user profile:', error);
+          setIsAdmin(false);
+        } else {
+          setIsAdmin(profile?.role === 'admin');
+        }
+      } catch (error) {
+        console.error('Error checking admin status:', error);
+        setIsAdmin(false);
+      } finally {
+        setCheckingAuth(false);
+      }
+    };
+
+    checkAdminStatus();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,6 +146,44 @@ const FormationUpload = () => {
       toast.error('Erreur lors de l\'upload de la miniature');
     }
   };
+
+  // Show loading state while checking authentication
+  if (checkingAuth) {
+    return (
+      <div className="max-w-4xl mx-auto p-6">
+        <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
+          <CardContent className="flex items-center justify-center p-12">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cosmic-stellar-gold mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Vérification des autorisations...</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Show unauthorized access message for non-admin users
+  if (!isAdmin) {
+    return (
+      <div className="max-w-4xl mx-auto p-6">
+        <Card className="bg-card/60 backdrop-blur-sm border-cosmic-stellar-gold/20">
+          <CardContent className="text-center p-12">
+            <Shield className="w-16 h-16 text-cosmic-stellar-gold mx-auto mb-6" />
+            <h2 className="text-2xl font-bold text-cosmic-stellar-gold mb-4">
+              Accès Restreint
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Cette section est réservée aux administrateurs. Vous devez avoir des privilèges d'administrateur pour créer des formations.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Si vous pensez que c'est une erreur, veuillez contacter l'administrateur du site.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-6">
