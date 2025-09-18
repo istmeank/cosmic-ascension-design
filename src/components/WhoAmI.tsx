@@ -10,7 +10,7 @@ const WhoAmI = () => {
           <img 
             src={quiSuisJeLogo} 
             alt="Qui suis-je ?" 
-            className="h-48 md:h-64 mx-auto mb-6 drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold))] animate-pulse"
+            className="w-full max-w-[1100px] md:max-w-[1280px] h-auto mx-auto mb-6 drop-shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold))] animate-pulse"
           />
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
         </div>
