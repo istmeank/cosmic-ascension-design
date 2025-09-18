@@ -110,16 +110,6 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Explication du logo */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-cosmic-stellar-gold mb-4">Signification du Logo</h3>
-          <div className="max-w-4xl mx-auto space-y-4 text-cosmic-star-white/80">
-            <p>LVL pour LEVEL et + pour UP = LEVEL UP</p>
-            <p>La couronne représente votre valeur de base qui s'ouvre sur un système de valeurs complet et cohérent</p>
-            <p>Chaque L représente un pilier, chaque pilier une nuance, chaque pilier une porte vers un espace vital incroyable</p>
-            <p>Le fond galactique représente l'univers à explorer après s'être réconciliée avec son ego</p>
-          </div>
-        </div>
 
         <div className="text-center mt-12">
           <Button variant="royal" size="xl">
