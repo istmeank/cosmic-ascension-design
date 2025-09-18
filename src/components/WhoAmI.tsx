@@ -12,41 +12,154 @@ const WhoAmI = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-cosmic-stellar-gold to-cosmic-nebula-green mx-auto mb-8"></div>
         </div>
 
-        {/* Photo de profil - centrée en haut avec constellation orbitante */}
+        {/* Photo de profil - centrée en haut avec constellations */}
         <div className="flex justify-center mb-16">
-          <div className="relative w-96 h-96">
-            {/* Constellation d'étoiles orbitantes autour de la photo */}
-            <div className="absolute inset-0 animate-[spin_40s_linear_infinite]">
-              {/* Étoile Bienveillance - Nord */}
-              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 text-center">
-                <div className="w-4 h-4 bg-cosmic-purple-pink rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-purple-pink))] relative">
-                  <div className="absolute inset-0 bg-cosmic-purple-pink rounded-full animate-ping"></div>
-                </div>
-                <span className="text-xs font-semibold text-cosmic-purple-pink whitespace-nowrap">❤️ Bienveillance</span>
+          <div className="relative w-[600px] h-[600px]">
+            
+            {/* Constellation Bienveillance - Nord */}
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
+              <svg width="200" height="120" className="absolute -translate-x-1/2 -translate-y-1/2">
+                {/* Lignes de constellation */}
+                <line x1="50" y1="80" x2="100" y2="30" stroke="hsl(var(--cosmic-purple-pink))" strokeWidth="1" opacity="0.8"/>
+                <line x1="100" y1="30" x2="150" y2="80" stroke="hsl(var(--cosmic-purple-pink))" strokeWidth="1" opacity="0.8"/>
+                <line x1="75" y1="60" x2="100" y2="30" stroke="hsl(var(--cosmic-purple-pink))" strokeWidth="1" opacity="0.8"/>
+                <line x1="125" y1="60" x2="150" y2="80" stroke="hsl(var(--cosmic-purple-pink))" strokeWidth="1" opacity="0.8"/>
+                
+                {/* Étoiles */}
+                <circle cx="50" cy="80" r="3" fill="hsl(var(--cosmic-purple-pink))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="100" cy="30" r="4" fill="hsl(var(--cosmic-purple-pink))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.8;1;0.8" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="150" cy="80" r="3" fill="hsl(var(--cosmic-purple-pink))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="75" cy="60" r="2" fill="hsl(var(--cosmic-purple-pink))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="125" cy="60" r="2" fill="hsl(var(--cosmic-purple-pink))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.7;1;0.7" dur="1.6s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div className="text-center mt-8">
+                <span className="text-sm font-semibold text-cosmic-purple-pink whitespace-nowrap">❤️ Bienveillance</span>
               </div>
-              
-              {/* Étoile Souveraineté - Est */}
-              <div className="absolute top-1/2 -right-20 transform -translate-y-1/2 text-center">
-                <div className="w-4 h-4 bg-cosmic-stellar-gold rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-stellar-gold))] relative">
-                  <div className="absolute inset-0 bg-cosmic-stellar-gold rounded-full animate-ping animation-delay-1000"></div>
-                </div>
-                <span className="text-xs font-semibold text-cosmic-stellar-gold whitespace-nowrap">👑 Souveraineté</span>
+            </div>
+
+            {/* Constellation Souveraineté - Est */}
+            <div className="absolute top-1/2 -right-32 transform -translate-y-1/2">
+              <svg width="160" height="200" className="absolute -translate-x-1/2 -translate-y-1/2">
+                {/* Lignes de constellation - forme couronne */}
+                <line x1="80" y1="50" x2="60" y2="100" stroke="hsl(var(--cosmic-stellar-gold))" strokeWidth="1" opacity="0.8"/>
+                <line x1="80" y1="50" x2="100" y2="100" stroke="hsl(var(--cosmic-stellar-gold))" strokeWidth="1" opacity="0.8"/>
+                <line x1="60" y1="100" x2="80" y2="150" stroke="hsl(var(--cosmic-stellar-gold))" strokeWidth="1" opacity="0.8"/>
+                <line x1="100" y1="100" x2="80" y2="150" stroke="hsl(var(--cosmic-stellar-gold))" strokeWidth="1" opacity="0.8"/>
+                <line x1="40" y1="75" x2="60" y2="100" stroke="hsl(var(--cosmic-stellar-gold))" strokeWidth="1" opacity="0.8"/>
+                <line x1="120" y1="75" x2="100" y2="100" stroke="hsl(var(--cosmic-stellar-gold))" strokeWidth="1" opacity="0.8"/>
+                
+                {/* Étoiles */}
+                <circle cx="80" cy="50" r="4" fill="hsl(var(--cosmic-stellar-gold))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="60" cy="100" r="3" fill="hsl(var(--cosmic-stellar-gold))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="2.1s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="100" cy="100" r="3" fill="hsl(var(--cosmic-stellar-gold))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.7;1;0.7" dur="1.9s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="80" cy="150" r="3" fill="hsl(var(--cosmic-stellar-gold))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="40" cy="75" r="2" fill="hsl(var(--cosmic-stellar-gold))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.7s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="120" cy="75" r="2" fill="hsl(var(--cosmic-stellar-gold))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.7s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div className="text-center mt-16 ml-8">
+                <span className="text-sm font-semibold text-cosmic-stellar-gold whitespace-nowrap">👑 Souveraineté</span>
               </div>
-              
-              {/* Étoile Acceptation - Sud */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center">
-                <div className="w-4 h-4 bg-cosmic-nebula-green rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-nebula-green))] relative">
-                  <div className="absolute inset-0 bg-cosmic-nebula-green rounded-full animate-ping animation-delay-2000"></div>
-                </div>
-                <span className="text-xs font-semibold text-cosmic-nebula-green whitespace-nowrap">🙏 Acceptation</span>
+            </div>
+
+            {/* Constellation Acceptation - Sud */}
+            <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+              <svg width="180" height="140" className="absolute -translate-x-1/2 -translate-y-1/2">
+                {/* Lignes de constellation - forme lotus/mandala */}
+                <line x1="90" y1="40" x2="60" y2="80" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="90" y1="40" x2="120" y2="80" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="60" y1="80" x2="90" y2="120" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="120" y1="80" x2="90" y2="120" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="30" y1="60" x2="60" y2="80" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="150" y1="60" x2="120" y2="80" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="45" y1="100" x2="60" y2="80" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                <line x1="135" y1="100" x2="120" y2="80" stroke="hsl(var(--cosmic-nebula-green))" strokeWidth="1" opacity="0.8"/>
+                
+                {/* Étoiles */}
+                <circle cx="90" cy="40" r="4" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="60" cy="80" r="3" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="120" cy="80" r="3" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="90" cy="120" r="3" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="1.6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="30" cy="60" r="2" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="150" cy="60" r="2" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.9s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="45" cy="100" r="2" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="135" cy="100" r="2" fill="hsl(var(--cosmic-nebula-green))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.5;0.8;0.5" dur="1.4s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div className="text-center mt-12">
+                <span className="text-sm font-semibold text-cosmic-nebula-green whitespace-nowrap">🙏 Acceptation</span>
               </div>
-              
-              {/* Étoile Sagesse - Ouest */}
-              <div className="absolute top-1/2 -left-16 transform -translate-y-1/2 text-center">
-                <div className="w-4 h-4 bg-cosmic-nebula-purple rounded-full animate-pulse mb-2 mx-auto shadow-[0_0_20px_hsl(var(--cosmic-nebula-purple))] relative">
-                  <div className="absolute inset-0 bg-cosmic-nebula-purple rounded-full animate-ping animation-delay-3000"></div>
-                </div>
-                <span className="text-xs font-semibold text-cosmic-nebula-purple whitespace-nowrap">🧠 Sagesse</span>
+            </div>
+
+            {/* Constellation Sagesse - Ouest */}
+            <div className="absolute top-1/2 -left-28 transform -translate-y-1/2">
+              <svg width="140" height="180" className="absolute -translate-x-1/2 -translate-y-1/2">
+                {/* Lignes de constellation - forme spirale de sagesse */}
+                <line x1="70" y1="40" x2="50" y2="70" stroke="hsl(var(--cosmic-nebula-purple))" strokeWidth="1" opacity="0.8"/>
+                <line x1="50" y1="70" x2="90" y2="100" stroke="hsl(var(--cosmic-nebula-purple))" strokeWidth="1" opacity="0.8"/>
+                <line x1="90" y1="100" x2="40" y2="130" stroke="hsl(var(--cosmic-nebula-purple))" strokeWidth="1" opacity="0.8"/>
+                <line x1="40" y1="130" x2="100" y2="150" stroke="hsl(var(--cosmic-nebula-purple))" strokeWidth="1" opacity="0.8"/>
+                <line x1="70" y1="40" x2="110" y2="60" stroke="hsl(var(--cosmic-nebula-purple))" strokeWidth="1" opacity="0.8"/>
+                <line x1="110" y1="60" x2="90" y2="100" stroke="hsl(var(--cosmic-nebula-purple))" strokeWidth="1" opacity="0.8"/>
+                
+                {/* Étoiles */}
+                <circle cx="70" cy="40" r="4" fill="hsl(var(--cosmic-nebula-purple))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.8;1;0.8" dur="1.7s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="50" cy="70" r="3" fill="hsl(var(--cosmic-nebula-purple))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;1;0.6" dur="2.1s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="90" cy="100" r="4" fill="hsl(var(--cosmic-nebula-purple))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.7;1;0.7" dur="1.9s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="40" cy="130" r="3" fill="hsl(var(--cosmic-nebula-purple))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="2.3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="100" cy="150" r="2" fill="hsl(var(--cosmic-nebula-purple))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="110" cy="60" r="2" fill="hsl(var(--cosmic-nebula-purple))" className="animate-pulse">
+                  <animate attributeName="opacity" values="0.6;0.9;0.6" dur="1.5s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div className="text-center mt-12 -ml-4">
+                <span className="text-sm font-semibold text-cosmic-nebula-purple whitespace-nowrap">🧠 Sagesse</span>
               </div>
             </div>
 
