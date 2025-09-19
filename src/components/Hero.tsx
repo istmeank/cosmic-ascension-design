@@ -83,10 +83,6 @@ const Hero = () => {
             <div className="absolute -inset-4 bg-gradient-to-br from-cosmic-nebula-purple/15 via-cosmic-royal-blue/15 to-cosmic-stellar-gold/15 rounded-full blur-2xl animate-pulse animation-delay-1000"></div>
             <div className="absolute -inset-2 bg-gradient-to-br from-cosmic-purple-pink/10 via-cosmic-nebula-green/10 to-cosmic-nebula-purple/10 rounded-full blur-xl animate-pulse animation-delay-2000"></div>
             
-            {/* Cercle néon principal */}
-            <div className="absolute inset-0 rounded-full border-2 border-cosmic-stellar-gold/60 shadow-[0_0_30px_hsl(var(--cosmic-stellar-gold)/0.8),inset_0_0_30px_hsl(var(--cosmic-stellar-gold)/0.3)] animate-pulse"></div>
-            <div className="absolute inset-2 rounded-full border border-cosmic-nebula-green/40 shadow-[0_0_20px_hsl(var(--cosmic-nebula-green)/0.6)] animate-pulse animation-delay-1000"></div>
-            
             {/* Logo avec glow effect */}
             <div className="relative w-full h-full flex items-center justify-center">
               <img 
